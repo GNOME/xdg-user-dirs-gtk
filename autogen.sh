@@ -55,6 +55,9 @@ rm -rf autom4te.cache
 # regenerated from their corresponding *.in files by ./configure anyway.
 touch README INSTALL
 
+glib-gettextize --force --copy
+intltoolize --force --copy --automake
+
 $ACLOCAL $ACLOCAL_FLAGS || exit $?
 
 autoheader || exit $?
