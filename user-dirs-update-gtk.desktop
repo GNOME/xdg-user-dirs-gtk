@@ -3,4 +3,5 @@ Encoding=UTF-8
 Exec=xdg-user-dirs-gtk-update
 Name=User folders update
 Terminal=false
-OnlyShownIn=GNOME;
+OnlyShowIn=GNOME;
+Type=Application
