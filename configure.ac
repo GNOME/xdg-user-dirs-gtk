@@ -29,6 +29,9 @@ AC_SUBST(GTK_CFLAGS)
 AC_SUBST(GTK_LIBS)
 
 AC_PATH_PROG(XDG_USER_DIRS_UPDATE, xdg-user-dirs-update, no)
+if test "x${XDG_USER_DIRS_UPDATE}" = "xno"; then
+  AC_MSG_ERROR([You need to install xdg-user-dirs])
+fi
 	
 dnl ==========================================================================
 
