@@ -1,6 +1,6 @@
 AC_INIT(parse.c)
 
-AM_INIT_AUTOMAKE(xdg-user-dirs-gtk, 0.3)
+AM_INIT_AUTOMAKE(xdg-user-dirs-gtk, 0.4)
 AM_CONFIG_HEADER(config.h)
 	
 AM_SANITY_CHECK
