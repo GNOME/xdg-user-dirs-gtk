@@ -1,6 +1,14 @@
 2007-03-06  Alexander Larsson  <alexl@redhat.com>
 
 	* configure.ac:
+	Bump version to 0.3
+	
+	* NEWS:
+	Update for release
+	
+2007-03-06  Alexander Larsson  <alexl@redhat.com>
+
+	* configure.ac:
 	Fail if we can't find xdg-user-dirs-update
 
 === xdg-user-dirs-gtk 0.2 ===
