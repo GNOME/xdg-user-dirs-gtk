@@ -1,0 +1,52 @@
+# xdg-user-dirs-gtk ja.po.
+# Copyright (C) 2007 Free Software Foundation, Inc.
+# This file is distributed under the same license as the 'xdg-user-dirs-gtk' package.
+# Takeshi AIHANA <takeshi.aihana@gmail.com>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xdg-user-dirs-gtk trunk\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-03-25 19:54+0900\n"
+"PO-Revision-Date: 2007-03-25 19:54+0900\n"
+"Last-Translator: Takeshi AIHANA <takeshi.aihana@gmail.com>\n"
+"Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../update.c:105
+msgid ""
+"You have logged in in a new language. Do you want to update the standard "
+"folders in your home folder to the new language?"
+msgstr ""
+"新しいロケールでログインしました。お使いのホームにある標準フォルダを新しいロ"
+"ケール向けに更新しますか？"
+
+#: ../update.c:107
+msgid "The update would change the following folders:"
+msgstr "次のフォルダを更新します:"
+
+#: ../update.c:110
+msgid "Keep old folders"
+msgstr "古いフォルダ名のままにする"
+
+#: ../update.c:111
+msgid "Update names"
+msgstr "フォルダ名を更新する"
+
+#: ../update.c:120
+msgid "Current folder"
+msgstr "現在のフォルダ"
+
+#: ../update.c:125
+msgid "New folder"
+msgstr "新しいフォルダ"
+
+#: ../update.c:134
+msgid "Don't ask me this again"
+msgstr "次回から表示しない"
+
+#: ../update.c:151
+msgid "There was an error updating the folders"
+msgstr "フォルダを更新する際にエラーが発生しました"
