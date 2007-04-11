@@ -1,3 +1,7 @@
+Major changes in 0.4 are:
+* New translations
+* Remove old empty dirs on locale update
+
 Major changes in 0.3 are:
  * German translation
  * Fail configure if xdg-user-dirs-update isn't found
