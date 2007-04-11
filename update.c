@@ -10,10 +10,36 @@
 #include <glib/gstdio.h>
 #include "parse.h"
 
+static XdgDirEntry *
+find_dir_entry (XdgDirEntry *entries, const char *type)
+{
+  int i;
+
+  for (i = 0; entries[i].type != NULL; i++)
+    {
+      if (strcmp (entries[i].type, type) == 0)
+	return &entries[i];
+    }
+  return NULL;
+}
+
+static XdgDirEntry *
+find_dir_entry_by_path (XdgDirEntry *entries, const char *path)
+{
+  int i;
+
+  for (i = 0; entries[i].type != NULL; i++)
+    {
+      if (strcmp (entries[i].path, path) == 0)
+	return &entries[i];
+    }
+  return NULL;
+}
+
 static void
 update_locale (XdgDirEntry *old_entries)
 {
-  XdgDirEntry *new_entries;
+  XdgDirEntry *new_entries, *entry;
   GtkWidget *dialog;
   int exit_status;
   int fd;
@@ -26,7 +52,7 @@ update_locale (XdgDirEntry *old_entries)
   GtkWidget *treeview, *check;
   GtkCellRenderer *cell;
   char *std_out, *std_err;
-  
+
   fd = g_file_open_tmp ("dirs-XXXXXX", &filename, NULL);
   if (fd == -1)
     return;
@@ -97,8 +123,6 @@ update_locale (XdgDirEntry *old_entries)
 	}
     }
 
-  g_free (new_entries);
-
   dialog = gtk_message_dialog_new (NULL, 0,
 				   GTK_MESSAGE_QUESTION,
 				   GTK_BUTTONS_NONE,
@@ -153,6 +177,24 @@ update_locale (XdgDirEntry *old_entries)
 	  gtk_dialog_run (GTK_DIALOG (error));
 	  gtk_widget_destroy (error);
 	}
+      else
+	{
+	  /* Change succeeded, remove any leftover empty directories */
+	  for (i = 0; old_entries[i].type != NULL; i++)
+	    {
+	      /* Never remove homedir */
+	      if (strcmp (old_entries[i].path, g_get_home_dir ()) == 0)
+		continue;
+	      
+	      /* If the old path is used by the new config, don't remove */
+	      entry = find_dir_entry_by_path (new_entries, old_entries[i].path);
+	      if (entry)
+		continue;
+
+	      /* Remove the dir, will fail if not empty */
+	      g_rmdir (old_entries[i].path);
+	    }
+	}
     }
 
   if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (check)))
@@ -165,36 +207,10 @@ update_locale (XdgDirEntry *old_entries)
       g_free (file);
     }
 
+  g_free (new_entries);
+
   gtk_widget_destroy (dialog);
 }
-
-static XdgDirEntry *
-find_dir_entry (XdgDirEntry *entries, const char *type)
-{
-  int i;
-
-  for (i = 0; entries[i].type != NULL; i++)
-    {
-      if (strcmp (entries[i].type, type) == 0)
-	return &entries[i];
-    }
-  return NULL;
-}
-
-static XdgDirEntry *
-find_dir_entry_by_path (XdgDirEntry *entries, const char *path)
-{
-  int i;
-
-  for (i = 0; entries[i].type != NULL; i++)
-    {
-      if (strcmp (entries[i].path, path) == 0)
-	return &entries[i];
-    }
-  return NULL;
-}
-
-
 
 int
 main (int argc, char *argv[])
