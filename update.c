@@ -36,6 +36,22 @@ find_dir_entry_by_path (XdgDirEntry *entries, const char *path)
   return NULL;
 }
 
+static gboolean
+has_xdg_translation (void)
+{
+  char *str;
+  const char *locale;
+
+  locale = setlocale (LC_MESSAGES, NULL);
+
+  if (strcmp (locale, "en_US") == 0 ||
+      strcmp (locale, "C") == 0)
+    return TRUE;
+  
+  str = "Desktop";
+  return dgettext ("xdg-user-dirs", str) != str;
+}
+
 static void
 update_locale (XdgDirEntry *old_entries)
 {
@@ -52,6 +68,7 @@ update_locale (XdgDirEntry *old_entries)
   GtkWidget *treeview, *check;
   GtkCellRenderer *cell;
   char *std_out, *std_err;
+  gboolean has_changes;
 
   fd = g_file_open_tmp ("dirs-XXXXXX", &filename, NULL);
   if (fd == -1)
@@ -80,7 +97,7 @@ update_locale (XdgDirEntry *old_entries)
   g_free (filename);
 
   list_store = gtk_list_store_new (2, G_TYPE_STRING, G_TYPE_STRING);
-  
+  has_changes = FALSE;
   for (i = 0; old_entries[i].type != NULL; i++)
     {
       for (j = 0; new_entries[j].type != NULL; j++)
@@ -101,6 +118,8 @@ update_locale (XdgDirEntry *old_entries)
 	  
 	  g_free (from);
 	  g_free (to);
+	  
+	  has_changes = TRUE;
 	}
     }
   for (j = 0; new_entries[j].type != NULL; j++)
@@ -120,9 +139,17 @@ update_locale (XdgDirEntry *old_entries)
 			      0, "-", 1, to, -1);
 
 	  g_free (to);
+	  
+	  has_changes = TRUE;
 	}
     }
 
+  if (!has_changes)
+    {
+      g_object_unref (list_store);
+      return;
+    }
+  
   dialog = gtk_message_dialog_new (NULL, 0,
 				   GTK_MESSAGE_QUESTION,
 				   GTK_BUTTONS_NONE,
@@ -210,6 +237,7 @@ update_locale (XdgDirEntry *old_entries)
   g_free (new_entries);
 
   gtk_widget_destroy (dialog);
+  g_object_unref (list_store);
 }
 
 int
@@ -227,6 +255,7 @@ main (int argc, char *argv[])
   setlocale (LC_ALL, "");
   
   bindtextdomain (GETTEXT_PACKAGE, GLIBLOCALEDIR);
+  bindtextdomain ("xdg-user-dirs", GLIBLOCALEDIR);
   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
   textdomain (GETTEXT_PACKAGE);
 
@@ -240,7 +269,8 @@ main (int argc, char *argv[])
     *dot = 0;
 
   if (old_locale && *old_locale != 0 &&
-      strcmp (old_locale, locale) != 0)
+      strcmp (old_locale, locale) != 0 &&
+      has_xdg_translation ())
     update_locale (old_entries);
 
   new_entries = parse_xdg_dirs (NULL);

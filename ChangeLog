@@ -1,3 +1,10 @@
+2007-04-25  Alexander Larsson  <alexl@redhat.com>
+
+        * update.c:
+	Avoid dialog prompting for switching to new locale
+	if that locale is not translated, or if there would
+	be no changes from whats currently selected.
+
 === xdg-user-dirs-gtk 0.4 ===
 
 2007-04-11  Alexander Larsson  <alexl@redhat.com>
