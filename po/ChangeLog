@@ -1,3 +1,8 @@
+2007-05-11  Alexander Larsson  <alexl@redhat.com>
+
+        * LINGUAS:
+        * ca.po: Added catalan translation
+
 === xdg-user-dirs-gtk 0.5 ===
 === xdg-user-dirs-gtk 0.4 ===
 
