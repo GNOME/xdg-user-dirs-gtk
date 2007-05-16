@@ -1,7 +1,12 @@
+2007-05-16  David Lodge <dave@cirt.net>
+
+	* en_GB.po: Updated British English translation
+	* LINGUAS: Added en_GB
+
 2007-05-11  Alexander Larsson  <alexl@redhat.com>
 
-        * LINGUAS:
-        * ca.po: Added catalan translation
+	* LINGUAS:
+	* ca.po: Added catalan translation
 
 === xdg-user-dirs-gtk 0.5 ===
 === xdg-user-dirs-gtk 0.4 ===
@@ -21,4 +26,4 @@
 
 2007-03-02  Hendrik Brandt  <heb@gnome-de.org>
 
-        * de.po: Add German translation.
+	* de.po: Add German translation.
