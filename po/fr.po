@@ -1,0 +1,51 @@
+# French translation of dg-user-dirs-gtk.
+# Copyright (C) 2007 Free Software Foundation, Inc.
+# This file is distributed under the same license as the xdg-user-dir-gtk package.
+#
+# Stéphane Raimbault <stephane.raimbault@gmail.com>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xdg-user-dirs-gtk HEAD\n"
+"Report-Msgid-Bugs-To: l10n-fr-maint@gnome.bugs\n"
+"POT-Creation-Date: 2007-05-20 17:04+0200\n"
+"PO-Revision-Date: 2007-05-20 17:17+0200\n"
+"Last-Translator: Stphane Raimbault <stephane.raimbault@gmail.com>\n"
+"Language-Team: GNOME French team <gnomefr@traduc.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../update.c:156
+msgid ""
+"You have logged in in a new language. Do you want to update the standard "
+"folders in your home folder to the new language?"
+msgstr "Vous vous êtes connecté sous une langue différente. Voulez-vous mettre à jour les dossiers standards de votre répertoire personnel vers cette nouvelle langue ?"
+
+#: ../update.c:158
+msgid "The update would change the following folders:"
+msgstr "La mise à jour va modifier les dossiers suivants :"
+
+#: ../update.c:161
+msgid "Keep old folders"
+msgstr "Conserver les anciens dossiers"
+
+#: ../update.c:162
+msgid "Update names"
+msgstr "Mettre à jour les noms"
+
+#: ../update.c:171
+msgid "Current folder"
+msgstr "Dossier actuel"
+
+#: ../update.c:176
+msgid "New folder"
+msgstr "Nouveau dossier"
+
+#: ../update.c:185
+msgid "Don't ask me this again"
+msgstr "Ne plus me poser la question"
+
+#: ../update.c:202
+msgid "There was an error updating the folders"
+msgstr "Une erreur est survenue lors de la mise à jour des dossiers"
