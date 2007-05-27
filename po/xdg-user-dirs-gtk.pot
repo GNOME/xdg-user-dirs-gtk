@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-02 20:54+0100\n"
+"POT-Creation-Date: 2007-05-27 13:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,36 +16,36 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../update.c:105
+#: ../update.c:156
 msgid ""
 "You have logged in in a new language. Do you want to update the standard "
 "folders in your home folder to the new language?"
 msgstr ""
 
-#: ../update.c:107
+#: ../update.c:158
 msgid "The update would change the following folders:"
 msgstr ""
 
-#: ../update.c:110
+#: ../update.c:161
 msgid "Keep old folders"
 msgstr ""
 
-#: ../update.c:111
+#: ../update.c:162
 msgid "Update names"
 msgstr ""
 
-#: ../update.c:120
+#: ../update.c:171
 msgid "Current folder"
 msgstr ""
 
-#: ../update.c:125
+#: ../update.c:176
 msgid "New folder"
 msgstr ""
 
-#: ../update.c:134
+#: ../update.c:185
 msgid "Don't ask me this again"
 msgstr ""
 
-#: ../update.c:151
+#: ../update.c:202
 msgid "There was an error updating the folders"
 msgstr ""
