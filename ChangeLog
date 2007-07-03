@@ -1,3 +1,9 @@
+2007-07-03  Alexander Larsson  <alexl@redhat.com>
+
+        * update.c:
+	Include locale.h
+	Patch from Jaap Haitsma
+
 === xdg-user-dirs-gtk 0.5 ===
 
 2007-04-25  Alexander Larsson  <alexl@redhat.com>

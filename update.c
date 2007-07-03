@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <libintl.h>
+#include <locale.h>
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
 #include <glib/gstdio.h>
