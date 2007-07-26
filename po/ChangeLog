@@ -1,3 +1,8 @@
+2007-07-26  Raphael Higino  <raphaelh@svn.gnome.org>
+
+	* LINGUAS: Added pt_BR.
+	* pt_BR.po: Added Brazilian Portuguese translation
+
 2007-06-29  Artur Flinta  <aflinta@svn.gnome.org>
 
 	* pl.po: Updated Polish translation by GNOME PL Team.
@@ -33,8 +38,8 @@
 
 2007-05-16  Jorge Gonzalez <jorgegonz@svn.gnome.org>
 
-        * LINGUAS: Added 'es'
-        * es.po: Added spanish translation
+	* LINGUAS: Added 'es'
+	* es.po: Added spanish translation
 
 2007-05-16  David Lodge <dave@cirt.net>
 
