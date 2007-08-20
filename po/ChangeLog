@@ -1,3 +1,9 @@
+2007-08-20  Alexander Larsson  <alexl@redhat.com>
+
+	* LINGUAS:
+	* nl.po:
+	Add Dutch translation
+
 2007-08-16  Inaki Larranaga Murgoitio  <dooteo@<zundan.com>
 
         * LINGUAS: Added 'eu' (Basque) code.
