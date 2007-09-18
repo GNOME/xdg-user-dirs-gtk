@@ -1,5 +1,18 @@
 2007-09-18  Luca Ferretti  <elle.uca@libero.it>
 
+	* ABOUT-NLS:
+	* config.guess:
+	* config.h.in:
+	* config.rpath:
+	* config.sub:
+	* depcomp:
+	* intltool-extract.in:
+	* intltool-merge.in:
+	* missing:
+	Remove spurious files.
+
+2007-09-18  Luca Ferretti  <elle.uca@libero.it>
+
 	* MAINTAINERS: Add needed file.
 
 2007-08-21  Alexander Larsson  <alexl@redhat.com>

@@ -1,3 +1,9 @@
+2007-09-18  Luca Ferretti  <elle.uca@libero.it>
+
+	* Makefile.in.in:
+	* Makevars:
+	* xdg-user-dirs-gtk.pot:
+
 2007-09-04  Gintautas Miliauskas  <gintas@akl.lt>
 
 	* LINGUAS: Added 'lt' (Lithuanian).
