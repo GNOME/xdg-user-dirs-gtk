@@ -1,5 +1,9 @@
 2007-09-18  Luca Ferretti  <elle.uca@libero.it>
 
+	* it.po: Updated Italian translation.
+
+2007-09-18  Luca Ferretti  <elle.uca@libero.it>
+
 	* POTFILES.in:
 	Add user-dirs-update-gtk.desktop.in to sources.
 
