@@ -3,6 +3,7 @@
 	* Makefile.in.in:
 	* Makevars:
 	* xdg-user-dirs-gtk.pot:
+	Remove spurious files.
 
 2007-09-04  Gintautas Miliauskas  <gintas@akl.lt>
 
