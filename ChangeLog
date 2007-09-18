@@ -1,5 +1,12 @@
 2007-09-18  Luca Ferretti  <elle.uca@libero.it>
 
+	* update.c: (update_locale):
+	Make warning dialog HIG compliant (at least a little more):
+	update labels, headings, accelerators and add a scrolled
+	around the the treeview to apply a shadow.
+
+2007-09-18  Luca Ferretti  <elle.uca@libero.it>
+
 	* Makefile.am:
 	* user-dirs-update-gtk.desktop:
 	* user-dirs-update-gtk.desktop.in:

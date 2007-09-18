@@ -68,6 +68,7 @@ update_locale (XdgDirEntry *old_entries)
   GtkTreeIter iter;
   GtkWidget *treeview, *check;
   GtkCellRenderer *cell;
+  GtkWidget *scrolledwindow;
   char *std_out, *std_err;
   gboolean has_changes;
 
@@ -152,38 +153,48 @@ update_locale (XdgDirEntry *old_entries)
     }
   
   dialog = gtk_message_dialog_new (NULL, 0,
-				   GTK_MESSAGE_QUESTION,
+				   GTK_MESSAGE_WARNING,
 				   GTK_BUTTONS_NONE,
-				   _("You have logged in in a new language. Do you want to update the standard folders in your home folder to the new language?"));
+				   _("Update standard folders to current language?"));
   gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
-					    _("The update would change the following folders:"));
+					    _("You have logged in in a new language. You can automatically update the names of some standard folders in your home folder to match this language. The update would change the following folders:"));
 
   gtk_dialog_add_buttons (GTK_DIALOG (dialog),
-			  _("Keep old folders"), GTK_RESPONSE_NO,
-			  _("Update names"), GTK_RESPONSE_YES,
+			  _("_Keep Old Names"), GTK_RESPONSE_NO,
+			  _("_Update Names"), GTK_RESPONSE_YES,
 			  NULL);
 
   gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_NO);
+
+  scrolledwindow = gtk_scrolled_window_new (NULL, NULL);
+  gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolledwindow),
+				  GTK_POLICY_NEVER,
+				  GTK_POLICY_NEVER);
+  gtk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (scrolledwindow),
+				       GTK_SHADOW_IN);  
+  
+  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dialog)->vbox), scrolledwindow, FALSE, FALSE, 2);  
   
   treeview = gtk_tree_view_new_with_model (GTK_TREE_MODEL (list_store));
 
   cell = gtk_cell_renderer_text_new ();
   gtk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (treeview),
-					       -1, _("Current folder"),
+					       -1, _("Current folder name"),
 					       cell,
 					       "text", 0,
 					       NULL);
   gtk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (treeview),
-					       -1, _("New folder"),
+					       -1, _("New folder name"),
 					       cell,
 					       "text", 1,
 					       NULL);
 
-  gtk_widget_show (treeview);
-  
-  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dialog)->vbox), treeview, FALSE, FALSE, 2);
+  gtk_container_add (GTK_CONTAINER (scrolledwindow),
+		     treeview);
 
-  check = gtk_check_button_new_with_label (_("Don't ask me this again"));
+  gtk_widget_show_all (scrolledwindow);
+
+  check = gtk_check_button_new_with_mnemonic (_("_Don't ask me this again"));
   gtk_widget_show (check);
   gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dialog)->vbox), check, FALSE, FALSE, 2);
   
