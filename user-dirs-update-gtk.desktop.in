@@ -1,7 +1,8 @@
 [Desktop Entry]
 Encoding=UTF-8
 Exec=xdg-user-dirs-gtk-update
-Name=User folders update
+_Name=User folders update
+_Comment=Update common folders names to match current locale
 Terminal=false
 OnlyShowIn=GNOME;
 Type=Application

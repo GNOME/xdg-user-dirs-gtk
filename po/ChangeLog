@@ -1,5 +1,10 @@
 2007-09-18  Luca Ferretti  <elle.uca@libero.it>
 
+	* POTFILES.in:
+	Add user-dirs-update-gtk.desktop.in to sources.
+
+2007-09-18  Luca Ferretti  <elle.uca@libero.it>
+
 	* Makefile.in.in:
 	* Makevars:
 	* xdg-user-dirs-gtk.pot:

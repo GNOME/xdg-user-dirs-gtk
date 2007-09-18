@@ -1,5 +1,12 @@
 2007-09-18  Luca Ferretti  <elle.uca@libero.it>
 
+	* Makefile.am:
+	* user-dirs-update-gtk.desktop:
+	* user-dirs-update-gtk.desktop.in:
+	Make autostart file entries translatables.
+
+2007-09-18  Luca Ferretti  <elle.uca@libero.it>
+
 	* ABOUT-NLS:
 	* config.guess:
 	* config.h.in:

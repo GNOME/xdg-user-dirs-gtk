@@ -2,6 +2,12 @@ NULL =
 
 SUBDIRS=po
 
+autostartdir = $(sysconfdir)/xdg/autostart
+autostart_in_files = user-dirs-update-gtk.desktop.in
+autostart_DATA = $(autostart_in_files:.desktop.in=.desktop)
+
+@INTLTOOL_DESKTOP_RULE@
+
 INCLUDES =					\
 	-I$(top_srcdir)				\
 	-I$(top_builddir)			\
@@ -15,7 +21,7 @@ EXTRA_DIST =					\
         intltool-extract.in                     \
         intltool-merge.in                       \
         intltool-update.in                      \
-	user-dirs-update-gtk.desktop		\
+	$(autostart_in_files)			\
 	$(NULL)
 
 
@@ -28,10 +34,9 @@ bin_PROGRAMS =					\
 xdg_user_dirs_gtk_update_SOURCES = parse.c parse.h update.c
 xdg_user_dirs_gtk_update_LDADD = $(libraries)
 
-autostartdir = $(sysconfdir)/xdg/autostart
-autostart_DATA = user-dirs-update-gtk.desktop
+CLEANFILES = $(autostart_DATA)
 
-DISTCLEANFILES = \
-  intltool-extract \
-  intltool-merge \
-  intltool-update
+DISTCLEANFILES = 				\
+	intltool-extract			\
+	intltool-merge				\
+	intltool-update
