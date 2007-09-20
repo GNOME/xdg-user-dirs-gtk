@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xdg-user-dirs-gtk.HEAD.es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-15 03:21+0100\n"
-"PO-Revision-Date: 2007-05-15 23:24+0200\n"
+"POT-Creation-Date: 2007-09-18 09:59+0100\n"
+"PO-Revision-Date: 2007-09-20 19:43+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,37 +17,49 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: ../update.c:156
-msgid ""
-"You have logged in in a new language. Do you want to update the standard "
-"folders in your home folder to the new language?"
-msgstr "Ha iniciado sesión en un idioma nuevo. ¿Quiere actualizar las carpetas estándar en su carpeta personal al nuevo idioma?"
-
 #: ../update.c:158
-msgid "The update would change the following folders:"
-msgstr "La actualización cambiaría las siguientes carpetas:"
+msgid "Update standard folders to current language?"
+msgstr "¿Actualizar las carpetas estándar al idioma actual?"
 
-#: ../update.c:161
-msgid "Keep old folders"
-msgstr "Conservar carpetas antiguas"
+#: ../update.c:160
+msgid ""
+"You have logged in in a new language. You can automatically update the names "
+"of some standard folders in your home folder to match this language. The "
+"update would change the following folders:"
+msgstr ""
+"Ha iniciado sesión en un idioma nuevo. Puede actualizar los nombres de algunas carpetas "
+"estándar en su carpeta personal de forma automática para así coincidir con este idioma. La "
+"actualización cambiaría las siguientes carpetas:"
 
-#: ../update.c:162
-msgid "Update names"
-msgstr "Actualizar nombres"
+#: ../update.c:163
+msgid "_Keep Old Names"
+msgstr "_Conservar nombres antiguos"
 
-#: ../update.c:171
-msgid "Current folder"
-msgstr "Carpeta actual"
+#: ../update.c:164
+msgid "_Update Names"
+msgstr "_Actualizar nombres"
 
-#: ../update.c:176
-msgid "New folder"
-msgstr "Carpeta nueva"
+#: ../update.c:182
+msgid "Current folder name"
+msgstr "Nombre de la carpeta actual"
 
-#: ../update.c:185
-msgid "Don't ask me this again"
-msgstr "No preguntarme esto de nuevo"
+#: ../update.c:187
+msgid "New folder name"
+msgstr "Nombre de la nueva carpeta"
 
-#: ../update.c:202
+#: ../update.c:197
+msgid "_Don't ask me this again"
+msgstr "_No preguntarme esto de nuevo"
+
+#: ../update.c:214
 msgid "There was an error updating the folders"
 msgstr "Hubo un error al actualizar las carpetas"
+
+#: ../user-dirs-update-gtk.desktop.in.h:1
+msgid "Update common folders names to match current locale"
+msgstr "Actualizar los nombres comunes de las carpetas para coincidir con la configuración regional actual"
+
+#: ../user-dirs-update-gtk.desktop.in.h:2
+msgid "User folders update"
+msgstr "Actualización de las carpetas del usuario"
 
