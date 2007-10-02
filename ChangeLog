@@ -1,3 +1,10 @@
+2007-10-02  Alexander Larsson  <alexl@redhat.com>
+
+        * update.c:
+        (has_xdg_translation):
+	Handle all en_US* versions (freedesktop bug #12640)
+	Patch from Matthias Clasen.
+
 2007-09-18  Luca Ferretti  <elle.uca@libero.it>
 
 	* update.c: (update_locale):

@@ -45,7 +45,7 @@ has_xdg_translation (void)
 
   locale = setlocale (LC_MESSAGES, NULL);
 
-  if (strcmp (locale, "en_US") == 0 ||
+  if (strncmp (locale, "en_US", 5) == 0 ||
       strcmp (locale, "C") == 0)
     return TRUE;
   
