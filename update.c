@@ -256,6 +256,7 @@ int
 main (int argc, char *argv[])
 {
   XdgDirEntry *old_entries, *new_entries, *entry;
+  XdgDirEntry *desktop_entry;
   GtkBookmark *bookmark;
   GList *bookmarks, *l;
   char *old_locale;
@@ -301,10 +302,13 @@ main (int argc, char *argv[])
 	NULL};
       /* No previous bookmarks. Generate standard ones */
 
+      desktop_entry = find_dir_entry (new_entries, "DESKTOP");
       for (i = 0; make_bm_for[i] != NULL; i++)
 	{
 	  entry = find_dir_entry (new_entries, make_bm_for[i]);
-	  if (entry && strcmp (entry->path, g_get_home_dir ()) != 0)
+	  
+	  if (entry && strcmp (entry->path, g_get_home_dir ()) != 0 &&
+	      (desktop_entry == NULL || strcmp (entry->path, desktop_entry->path) != 0))
 	    {
 	      uri = g_filename_to_uri (entry->path, NULL, NULL);
 	      if (uri)
