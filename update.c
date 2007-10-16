@@ -57,7 +57,7 @@ static void
 update_locale (XdgDirEntry *old_entries)
 {
   XdgDirEntry *new_entries, *entry;
-  GtkWidget *dialog;
+  GtkWidget *dialog, *vbox;
   int exit_status;
   int fd;
   char *filename;
@@ -166,6 +166,10 @@ update_locale (XdgDirEntry *old_entries)
 
   gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_NO);
 
+  vbox = gtk_vbox_new (FALSE, 6);
+  gtk_box_pack_start (GTK_BOX (GTK_MESSAGE_DIALOG (dialog)->label->parent), vbox, TRUE, TRUE, 0);
+  gtk_widget_show (vbox);
+
   scrolledwindow = gtk_scrolled_window_new (NULL, NULL);
   gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolledwindow),
 				  GTK_POLICY_NEVER,
@@ -173,7 +177,7 @@ update_locale (XdgDirEntry *old_entries)
   gtk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (scrolledwindow),
 				       GTK_SHADOW_IN);  
   
-  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dialog)->vbox), scrolledwindow, FALSE, FALSE, 2);  
+  gtk_box_pack_start (GTK_BOX (vbox), scrolledwindow, TRUE, TRUE, 0);
   
   treeview = gtk_tree_view_new_with_model (GTK_TREE_MODEL (list_store));
 
@@ -195,8 +199,8 @@ update_locale (XdgDirEntry *old_entries)
   gtk_widget_show_all (scrolledwindow);
 
   check = gtk_check_button_new_with_mnemonic (_("_Don't ask me this again"));
+  gtk_box_pack_start (GTK_BOX (vbox), check, FALSE, FALSE, 0);
   gtk_widget_show (check);
-  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dialog)->vbox), check, FALSE, FALSE, 2);
   
   response =  gtk_dialog_run (GTK_DIALOG (dialog));
 
