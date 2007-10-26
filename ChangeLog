@@ -1,3 +1,8 @@
+2007-10-26  Matthias Clasen   <mclasen@redhat.com>
+
+	* update.c (update_locale): Don't show a selection in the tree view.
+	(fdo#12936)
+
 2007-10-16  Christian Persch  <chpe@gnome.org>
 
 	* update.c: (update_locale): Fix the dialog's spacings and packings to

@@ -181,6 +181,9 @@ update_locale (XdgDirEntry *old_entries)
   
   treeview = gtk_tree_view_new_with_model (GTK_TREE_MODEL (list_store));
 
+  gtk_tree_selection_set_mode (gtk_tree_view_get_selection (GTK_TREE_VIEW (treeview)),
+                               GTK_SELECTION_NONE); 
+
   cell = gtk_cell_renderer_text_new ();
   gtk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (treeview),
 					       -1, _("Current folder name"),
