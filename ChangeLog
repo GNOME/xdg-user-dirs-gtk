@@ -1,5 +1,10 @@
 2007-10-26  Matthias Clasen   <mclasen@redhat.com>
 
+	* update.c (update_locale): Add a hint about the content of the
+	old directories to the dialog. String addition.  (fdo#12937)
+
+2007-10-26  Matthias Clasen   <mclasen@redhat.com>
+
 	* update.c (update_locale): Don't show a selection in the tree view.
 	(fdo#12936)
 

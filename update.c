@@ -69,6 +69,7 @@ update_locale (XdgDirEntry *old_entries)
   GtkWidget *treeview, *check;
   GtkCellRenderer *cell;
   GtkWidget *scrolledwindow;
+  GtkWidget *label;
   char *std_out, *std_err;
   gboolean has_changes;
 
@@ -200,6 +201,13 @@ update_locale (XdgDirEntry *old_entries)
 		     treeview);
 
   gtk_widget_show_all (scrolledwindow);
+
+  label = gtk_label_new (_("Note that existing content will not be moved."));
+  gtk_label_set_line_wrap (GTK_LABEL (label), TRUE);
+  gtk_label_set_selectable (GTK_LABEL (label), TRUE);
+  gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.0);
+  gtk_widget_show (label);
+  gtk_box_pack_start (GTK_BOX (vbox), label, FALSE, FALSE, 0);
 
   check = gtk_check_button_new_with_mnemonic (_("_Don't ask me this again"));
   gtk_box_pack_start (GTK_BOX (vbox), check, FALSE, FALSE, 0);
