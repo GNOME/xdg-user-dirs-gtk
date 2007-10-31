@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xdg-user-dirs-gtk trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-18 09:59+0100\n"
+"POT-Creation-Date: 2007-10-26 14:46+0100\n"
 "PO-Revision-Date: 2007-09-21 09:16+0200\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <gnome@fsf.hu>\n"
@@ -17,38 +17,45 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: ../update.c:158
+#: ../update.c:159
 msgid "Update standard folders to current language?"
 msgstr "Frissíti a szabvány mappákat a jelenlegi nyelvre?"
 
-#: ../update.c:160
+#: ../update.c:161
 msgid ""
 "You have logged in in a new language. You can automatically update the names "
 "of some standard folders in your home folder to match this language. The "
 "update would change the following folders:"
-msgstr "Új nyelvet használva jelentkezett be. A saját mappájában néhány szabványos mappa nevét frisssítheti erre az új nyelvre. A frissítés a következő mappákat módosítja:"
+msgstr ""
+"Új nyelvet használva jelentkezett be. A saját mappájában néhány szabványos "
+"mappa nevét frisssítheti erre az új nyelvre. A frissítés a következő "
+"mappákat módosítja:"
 
-#: ../update.c:163
+#: ../update.c:164
 msgid "_Keep Old Names"
 msgstr "_Régi nevek megtartása"
 
-#: ../update.c:164
+#: ../update.c:165
 msgid "_Update Names"
 msgstr "Nevek _frissítése"
 
-#: ../update.c:182
+#: ../update.c:190
 msgid "Current folder name"
 msgstr "Aktuális mappanév"
 
-#: ../update.c:187
+#: ../update.c:195
 msgid "New folder name"
 msgstr "Új mappanév"
 
-#: ../update.c:197
+#: ../update.c:205
+msgid "Note that existing content will not be moved."
+msgstr "Ne feledje, hogy a meglévő tartalom nem kerül áthelyezésre."
+
+#: ../update.c:212
 msgid "_Don't ask me this again"
 msgstr "Ne _kérdezze újra"
 
-#: ../update.c:214
+#: ../update.c:229
 msgid "There was an error updating the folders"
 msgstr "Hiba történt a mappák frissítése közben"
 
@@ -59,4 +66,3 @@ msgstr "Általános mappanevek frissítése a jelenlegi területi beállításra
 #: ../user-dirs-update-gtk.desktop.in.h:2
 msgid "User folders update"
 msgstr "Felhasználói mappák frissítése"
-
