@@ -1,0 +1,68 @@
+# Slovak translations for xdg-user-dirs-gtk package
+# Slovenské preklady pre balík xdg-user-dirs-gtk.
+# Copyright (C) 2007 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the xdg-user-dirs-gtk package.
+# Pavol Šimo <palo.simo@post.sk>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xdg-user-dirs-gtk\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-11-07 03:25+0000\n"
+"PO-Revision-Date: 2007-11-20 11:14+0100\n"
+"Last-Translator: Pavol Šimo <palo.simo@post.sk>\n"
+"Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit"
+
+#: ../update.c:159
+msgid "Update standard folders to current language?"
+msgstr "Aktualizovať štandardné priečinky pre aktuálny jazyk?"
+
+#: ../update.c:161
+msgid ""
+"You have logged in in a new language. You can automatically update the names "
+"of some standard folders in your home folder to match this language. The "
+"update would change the following folders:"
+msgstr ""
+"Prihlásili ste sa v novom jazyku. Môžete automaticky aktualizovať názvy niektorých "
+"štandardných priečinkov vo Vašom domovskom priečinku aby sa zhodovali s týmto "
+"jazykom. Aktualizácia zmení nasledovné priečinky:"
+
+#: ../update.c:164
+msgid "_Keep Old Names"
+msgstr "Ponechať _staré názvy"
+
+#: ../update.c:165
+msgid "_Update Names"
+msgstr "_Aktualizovať názvy"
+
+#: ../update.c:190
+msgid "Current folder name"
+msgstr "Aktuálny názov priečinka"
+
+#: ../update.c:195
+msgid "New folder name"
+msgstr "Starý názov priečinka"
+
+#: ../update.c:205
+msgid "Note that existing content will not be moved."
+msgstr "Poznámka: existujúci obsah nebude premiestnený."
+
+#: ../update.c:212
+msgid "_Don't ask me this again"
+msgstr "Túto otázku viac _nezobrazovať"
+
+#: ../update.c:229
+msgid "There was an error updating the folders"
+msgstr "Pri aktualizácií priečinkov nastala chyba"
+
+#: ../user-dirs-update-gtk.desktop.in.h:1
+msgid "Update common folders names to match current locale"
+msgstr "Aktualizovať bežné priečinky aby sa zhodovali s aktuálnym jazykom"
+
+#: ../user-dirs-update-gtk.desktop.in.h:2
+msgid "User folders update"
+msgstr "Aktualizácia užívateľských priečinkov"
+

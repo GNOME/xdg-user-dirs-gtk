@@ -1,3 +1,9 @@
+2007-11-27  Alexander Larsson  <alexl@redhat.com>
+
+        * LINGUAS:
+        * sk.po:
+	Add Slovak translation
+	
 2007-11-22  Duarte Loreto <happyguy_pt@hotmail.com>
 
 	* pt.po: Added Portuguese translation by André Neves
