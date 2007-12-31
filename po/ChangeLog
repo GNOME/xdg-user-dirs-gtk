@@ -1,5 +1,6 @@
 2008-01-01  Changwoo Ryu  <cwryu@debian.org>
 
+	* LINGUAS: Added ko.
 	* ko.po: Added Korean translation by Namhyung Kim.
 
 2007-12-26  Djihed Afifi <djihed@gmail.com> 
