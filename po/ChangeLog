@@ -1,7 +1,14 @@
+2008-01-05  Claude Paroz  <claude@2xlibre.net>
+
+	* LINGUAS: Added af.
+	* af.po: Added Afrikaans translation on behalf of Friedel Wolff
+	<friedel@translate.org.za>.
+
 2007-12-31  Yannig Marchegay <yannig@marchegay.org>
 
 	* oc.po: Updated Occitan translation.
-2008-01-01  Changwoo Ryu  <cwryu@debian.org>
+
+2008-01-01  Changwoo Ryu  <cwryu@debian.org>
 
 	* LINGUAS: Added ko.
 	* ko.po: Added Korean translation by Namhyung Kim.
