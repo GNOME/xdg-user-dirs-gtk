@@ -1,3 +1,10 @@
+Major changes in 0.7 are:
+* More translations
+* Translate autostart files
+* Some UI cleanup
+* Handle all en_US* versions
+* Don't make bookmarks to the desktop
+
 Major changes in 0.6 are:
 * New translations
 * Portability fix

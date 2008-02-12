@@ -1,3 +1,11 @@
+2008-02-12  Alexander Larsson  <alexl@redhat.com>
+
+	* Makefile.am (EXTRA_DIST):
+	Remove unneeded config.rpath
+
+	* NEWS:
+	Update for release
+
 2007-10-26  Matthias Clasen   <mclasen@redhat.com>
 
 	* update.c (update_locale): Add a hint about the content of the
