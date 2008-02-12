@@ -1,5 +1,12 @@
 2008-02-12  Alexander Larsson  <alexl@redhat.com>
 
+	* configure.ac:
+	Post release version bump
+
+=== xdg-user-dirs-gtk 0.7 ===
+	
+2008-02-12  Alexander Larsson  <alexl@redhat.com>
+
 	* Makefile.am (EXTRA_DIST):
 	Remove unneeded config.rpath
 
