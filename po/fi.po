@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xdg-user-dirs-gtk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-08 12:06+0300\n"
+"POT-Creation-Date: 2008-02-19 09:46+0300\n"
 "PO-Revision-Date: 2007-09-18 09:59+0100\n"
 "Last-Translator: Timo Jyrinki <timo.jyrinki@iki.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../update.c:158
+#: ../update.c:159
 msgid "Update standard folders to current language?"
 msgstr "Päivitä vakiokansiot nykyiselle kielelle?"
 
-#: ../update.c:160
+#: ../update.c:161
 msgid ""
 "You have logged in in a new language. You can automatically update the names "
 "of some standard folders in your home folder to match this language. The "
@@ -31,27 +31,31 @@ msgstr ""
 "vakiokansioiden nimet on mahdollista päivittää uudelle kielelle "
 "automaattisesti. Päivitys koskisi seuraavia kansioita:"
 
-#: ../update.c:163
+#: ../update.c:164
 msgid "_Keep Old Names"
 msgstr "Pidä _vanhat nimet"
 
-#: ../update.c:164
+#: ../update.c:165
 msgid "_Update Names"
 msgstr "_Päivitä nimet"
 
-#: ../update.c:182
+#: ../update.c:190
 msgid "Current folder name"
 msgstr "Nykyinen kansion nimi"
 
-#: ../update.c:187
+#: ../update.c:195
 msgid "New folder name"
 msgstr "Uusi kansion nimi"
 
-#: ../update.c:197
+#: ../update.c:205
+msgid "Note that existing content will not be moved."
+msgstr "Huomaa, että aiempaa sisältöä ei siirretä."
+
+#: ../update.c:212
 msgid "_Don't ask me this again"
 msgstr "Älä kysy tätä uu_destaan"
 
-#: ../update.c:214
+#: ../update.c:229
 msgid "There was an error updating the folders"
 msgstr "Kansioita päivitettäessä tapahtui virhe"
 
