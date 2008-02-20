@@ -2,13 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Vladimer Sichinava ვლადიმერ სიჭინავა <vsichi@gnome.org>, 2007.
+# Vladimer Sichinava ვლადიმერ სიჭინავა <vsichi@gnome.org>, 2007, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: ka\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-02 20:24+0200\n"
-"PO-Revision-Date: 2007-10-02 20:32+0200\n"
+"POT-Creation-Date: 2008-02-20 13:53+0100\n"
+"PO-Revision-Date: 2008-02-20 13:55+0100\n"
 "Last-Translator: Vladimer Sichinava ვლადიმერ სიჭინავა <vsichi@gnome.org>\n"
 "Language-Team: Georgian <http://mail.gnome.org/mailman/listinfo/gnome-ge-list>\n"
 "MIME-Version: 1.0\n"
@@ -17,40 +17,44 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 
-#: ../update.c:158
+#: ../update.c:159
 msgid "Update standard folders to current language?"
-msgstr "სტანდარტული დასტების მიმდინარე ენით განახლება?"
+msgstr "სტანდარტული დასტების მიმდინარე ენაზე გადარქმევა?"
 
-#: ../update.c:160
+#: ../update.c:161
 msgid ""
 "You have logged in in a new language. You can automatically update the names "
 "of some standard folders in your home folder to match this language. The "
 "update would change the following folders:"
 msgstr ""
-"თქვენ დარეგისტრირდით ახალი ენით. შესაძლებელია სტანდარტული "
-"დასტების სახელწოდებების ამ ენაზე შეცვლა. განახლება შეცვლის მიმდინარე დასტებს:"
-
-#: ../update.c:163
-msgid "_Keep Old Names"
-msgstr "ძველის _დატოვება"
+"თქვენ დარეგისტრირდით ახალი ენით. შესაძლებელია სტანდარტული დასტების "
+"სახელწოდებების ამ ენაზე შეცვლა. განახლება შეცვლის მიმდინარე დასტებს:"
 
 #: ../update.c:164
-msgid "_Update Names"
-msgstr "სახელწოდების _განახლება"
+msgid "_Keep Old Names"
+msgstr "_დატოვება"
 
-#: ../update.c:182
+#: ../update.c:165
+msgid "_Update Names"
+msgstr "_განახლება"
+
+#: ../update.c:190
 msgid "Current folder name"
 msgstr "დასტის მიმდინარე სახელწოდება"
 
-#: ../update.c:187
+#: ../update.c:195
 msgid "New folder name"
 msgstr "დასტის ახალი სახელწოდება"
 
-#: ../update.c:197
+#: ../update.c:205
+msgid "Note that existing content will not be moved."
+msgstr "შენიშვნა: შემცვლელობა არ წაიშლება."
+
+#: ../update.c:212
 msgid "_Don't ask me this again"
 msgstr "_აღარ შემეკითხო"
 
-#: ../update.c:214
+#: ../update.c:229
 msgid "There was an error updating the folders"
 msgstr "დაიშვა შეცდომა დასტების განახლებისას"
 
