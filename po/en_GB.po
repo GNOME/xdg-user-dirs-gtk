@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xdg-user-dirs-gtk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-04-22 07:18+0100\n"
+"POT-Creation-Date: 2008-03-09 18:30+0000\n"
 "PO-Revision-Date: 2007-05-16 08:55-0000\n"
 "Last-Translator: David Lodge <dave@cirt.net>\n"
 "Language-Team: en_GB <en@li.org>\n"
@@ -15,35 +15,55 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../update.c:156
-msgid "You have logged in in a new language. Do you want to update the standard folders in your home folder to the new language?"
-msgstr "You have logged in in a new language. Do you want to update the standard folders in your home folder to the new language?"
-
-#: ../update.c:158
-msgid "The update would change the following folders:"
-msgstr "The update would change the following folders:"
+#: ../update.c:159
+msgid "Update standard folders to current language?"
+msgstr "Update standard folders to current language?"
 
 #: ../update.c:161
-msgid "Keep old folders"
-msgstr "Keep old folders"
+msgid ""
+"You have logged in in a new language. You can automatically update the names "
+"of some standard folders in your home folder to match this language. The "
+"update would change the following folders:"
+msgstr ""
+"You have logged in in a new language. You can automatically update the names "
+"of some standard folders in your home folder to match this language. The "
+"update would change the following folders:"
 
-#: ../update.c:162
-msgid "Update names"
-msgstr "Update names"
+#: ../update.c:164
+msgid "_Keep Old Names"
+msgstr "_Keep Old Names"
 
-#: ../update.c:171
-msgid "Current folder"
-msgstr "Current folder"
+#: ../update.c:165
+msgid "_Update Names"
+msgstr "_Update Names"
 
-#: ../update.c:176
-msgid "New folder"
-msgstr "New folder"
+#: ../update.c:190
+msgid "Current folder name"
+msgstr "Current folder name"
 
-#: ../update.c:185
-msgid "Don't ask me this again"
-msgstr "Don't ask me this again"
+#: ../update.c:195
+msgid "New folder name"
+msgstr "New folder name"
 
-#: ../update.c:202
+#: ../update.c:205
+msgid "Note that existing content will not be moved."
+msgstr "Note that existing content will not be moved."
+
+#: ../update.c:212
+msgid "_Don't ask me this again"
+msgstr "_Don't ask me this again"
+
+#: ../update.c:229
 msgid "There was an error updating the folders"
 msgstr "There was an error updating the folders"
 
+#: ../user-dirs-update-gtk.desktop.in.h:1
+msgid "Update common folders names to match current locale"
+msgstr "Update common folders names to match current locale"
+
+#: ../user-dirs-update-gtk.desktop.in.h:2
+msgid "User folders update"
+msgstr "User folders update"
+
+#~ msgid "The update would change the following folders:"
+#~ msgstr "The update would change the following folders:"
