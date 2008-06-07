@@ -1,13 +1,13 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Norwegian bokmål translation of xdg-user-dirs-gtk
+# Copyright (C) Red Hat, Inc.
+# This file is distributed under the same license as the xdg-user-dirs-gtk package.
+# Kjartan Maraas <kmaraas@gnome.org>, 2007-2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xdg-user-dirs-gtk 0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-27 11:05+0200\n"
+"POT-Creation-Date: 2008-06-07 11:08+0200\n"
 "PO-Revision-Date: 2007-10-27 11:11+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmal <i18n-nb@lister.ping.uio.no>\n"
@@ -24,7 +24,10 @@ msgid ""
 "You have logged in in a new language. You can automatically update the names "
 "of some standard folders in your home folder to match this language. The "
 "update would change the following folders:"
-msgstr "Du har logget inn med et nytt språk. Du kan oppdatere navnet på noen standardmapper i din hjemmekatalogen til det nye språket. Oppdateringen vil endre følgende mapper:"
+msgstr ""
+"Du har logget inn med et nytt språk. Du kan oppdatere navnet på noen "
+"standardmapper i din hjemmekatalogen til det nye språket. Oppdateringen vil "
+"endre følgende mapper:"
 
 #: ../update.c:164
 msgid "_Keep Old Names"

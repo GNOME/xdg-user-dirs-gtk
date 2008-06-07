@@ -1,3 +1,8 @@
+2008-06-07  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* en_GB.po: Remove executable bit.
+	* nb.po: Update a bit.
+
 2008-04-14  Takeshi AIHANA <takeshi.aihana@gmail.com>
 
 	* ja.po: Updated Japanese translation.
