@@ -1,3 +1,7 @@
+2008-09-05  Matthias Clasen  <mclasen@redhat.com>
+
+	* user-dirs-update-gtk.desktop.in: Make work better in KDE.
+
 2008-02-12  Alexander Larsson  <alexl@redhat.com>
 
 	* configure.ac:

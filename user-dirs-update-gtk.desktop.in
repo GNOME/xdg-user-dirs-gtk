@@ -6,3 +6,5 @@ _Comment=Update common folders names to match current locale
 Terminal=false
 OnlyShowIn=GNOME;
 Type=Application
+StartupNotify=false
+X-KDE-autostart-after=panel
