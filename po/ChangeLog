@@ -1,4 +1,8 @@
-2008-07-31  Djihed Afifi <djihed@gmail.com> 
+2008-09-14  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	* nl.po: Updated Dutch translation by Tino Meinen.
+
+2008-07-31  Djihed Afifi <djihed@gmail.com>
 
 	* ar.po: Updated Arabic Translation by Khaled Hosny.
 
@@ -47,7 +51,7 @@
 
 2008-02-20  Vladimer Sichinava <vsichi@gnome.org>
 
-        * ka.po: Updated Georgian translation.
+	* ka.po: Updated Georgian translation.
 
 2008-02-19  Ilkka Tuohela <hile@iki.fi>
 
@@ -83,14 +87,14 @@
 	* LINGUAS: Added ko.
 	* ko.po: Added Korean translation by Namhyung Kim.
 
-2007-12-26  Djihed Afifi <djihed@gmail.com> 
+2007-12-26  Djihed Afifi <djihed@gmail.com>
 
 	* ar.po: Updated Arabic Translation by Khaled Hosny.
 
 2007-11-27  Alexander Larsson  <alexl@redhat.com>
 
-        * LINGUAS:
-        * sk.po:
+	* LINGUAS:
+	* sk.po:
 	Add Slovak translation
 	
 2007-11-22  Duarte Loreto <happyguy_pt@hotmail.com>
@@ -114,7 +118,7 @@
 
 2007-10-01  Jorge Gonzalez  <jorgegonz@svn.gnome.org>
 
-        * es.po: Updated Spanish translation
+	* es.po: Updated Spanish translation
 
 2007-10-31  Gabor Kelemen  <kelemeng@gnome.hu>
 
@@ -147,7 +151,7 @@
 
 2007-10-02  Vladimer Sichinava  <vsichi@gnome.org>
 
-        * ka.po: Updated Georgian translation.
+	* ka.po: Updated Georgian translation.
 
 2007-09-29  Claude Paroz  <claude@2xlibre.net>
 
@@ -159,7 +163,7 @@
 
 2007-09-20  Jorge Gonzalez  <jorgegonz@svn.gnome.org>
 
-        * es.po: Updated Spanish translation
+	* es.po: Updated Spanish translation
 
 2007-09-19  Daniel Nylander <po@danielnylander.se>
 
@@ -214,7 +218,7 @@
 
 	* hu.po: Translation added.
 	* LINGUAS: hu added
- 
+
 2007-06-14  Pema Geyleg <pema.geyleg@gmail.com>
 
 	* dz.po: Added dzongkha translation.
