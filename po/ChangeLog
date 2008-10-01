@@ -1,3 +1,8 @@
+2008-10-01  Amanpreet Singh Alam <aman@svn.gnome.org>
+
+	* pa.po: Punjabi Translation added
+	* LINGUAS: pa added to list
+
 2008-09-27  Matej Urbančič <mateju@svn.gnome.org>
 
 	* sl.po: Updated Slovenian translation.
