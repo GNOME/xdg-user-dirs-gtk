@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ka\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-20 13:53+0100\n"
+"POT-Creation-Date: 2008-10-03 02:24+0200\n"
 "PO-Revision-Date: 2008-02-20 13:55+0100\n"
 "Last-Translator: Vladimer Sichinava ვლადიმერ სიჭინავა <vsichi@gnome.org>\n"
 "Language-Team: Georgian <http://mail.gnome.org/mailman/listinfo/gnome-ge-list>\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../update.c:159
 msgid "Update standard folders to current language?"
-msgstr "სტანდარტული დასტების მიმდინარე ენაზე გადარქმევა?"
+msgstr "გნებავთ სტანდარტული დასტების მიმდინარე ენაზე გადარქმევა?"
 
 #: ../update.c:161
 msgid ""
@@ -28,11 +28,11 @@ msgid ""
 "update would change the following folders:"
 msgstr ""
 "თქვენ დარეგისტრირდით ახალი ენით. შესაძლებელია სტანდარტული დასტების "
-"სახელწოდებების ამ ენაზე შეცვლა. განახლება შეცვლის მიმდინარე დასტებს:"
+"სახელწოდებების ამ ენაზე შეცვლა. განახლება ეხება მიმდინარე დასტებს:"
 
 #: ../update.c:164
 msgid "_Keep Old Names"
-msgstr "_დატოვება"
+msgstr "შ_ენარჩუნება"
 
 #: ../update.c:165
 msgid "_Update Names"
@@ -48,7 +48,7 @@ msgstr "დასტის ახალი სახელწოდება"
 
 #: ../update.c:205
 msgid "Note that existing content will not be moved."
-msgstr "შენიშვნა: შემცვლელობა არ წაიშლება."
+msgstr "შენიშვნა: შემცვლელობა არ იქნება გადატანილი."
 
 #: ../update.c:212
 msgid "_Don't ask me this again"
@@ -60,9 +60,8 @@ msgstr "დაიშვა შეცდომა დასტების გა
 
 #: ../user-dirs-update-gtk.desktop.in.h:1
 msgid "Update common folders names to match current locale"
-msgstr "საერთო დასტების ენის მიხედვით განახლება"
+msgstr "დასტების მიმდინარე ლოკალის მიხედვით განახლება"
 
 #: ../user-dirs-update-gtk.desktop.in.h:2
 msgid "User folders update"
 msgstr "მომხმარებელთა დასტების განახლება"
-
