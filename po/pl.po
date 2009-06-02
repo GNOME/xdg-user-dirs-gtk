@@ -1,16 +1,21 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+# Aviary.pl
+# Jeśli masz jakiekolwiek uwagi odnoszące się do tłumaczenia lub chcesz
+# pomóc w jego rozwijaniu i pielęgnowaniu, napisz do nas:
+# gnomepl@aviary.pl
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+# translation of xdg-user-dirs-gtk to Polish
+# Copyright (C) 2009 Aviary.pl
+# This file is distributed under the same license as the xdg-user-dirs-gtk package.
+# Tomasz Dominikowski <tdominikowski@aviary.pl>, 2007 - 2009
 msgid ""
 msgstr ""
 "Project-Id-Version: xdg-user-dirs-gtk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-07 21:43+0100\n"
-"PO-Revision-Date: 2008-02-06 20:25+0100\n"
+"POT-Creation-Date: 2009-06-03 00:03+0200\n"
+"PO-Revision-Date: 2009-06-03 00:02+0100\n"
 "Last-Translator: Tomasz Dominikowski <dominikowski@gmail.com>\n"
-"Language-Team: Tomasz Dominikowski (Aviary.pl) <dominikowski@gmail.com>\n"
+"Language-Team: Polish <gnomepl@aviary.pl>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,7 +24,7 @@ msgstr ""
 
 #: ../update.c:159
 msgid "Update standard folders to current language?"
-msgstr "Zaktualizować standardowe foldery do bieżącego języka?"
+msgstr "Zaktualizować standardowe katalogi do bieżącego języka?"
 
 #: ../update.c:161
 msgid ""
@@ -27,13 +32,13 @@ msgid ""
 "of some standard folders in your home folder to match this language. The "
 "update would change the following folders:"
 msgstr ""
-"Logowanie odbyło się w nowym języku. Można zaktualizować nazwy standardowych "
-"folderów w folderze domowym do nowego języka. Aktualizacja bierze pod uwagę "
-"następujące foldery:"
+"Zalogowano z nowym językiem. Można automatycznie zaktualizować nazwy "
+"niektórych standardowych katalogów w katalogu domowym, aby dopasować je do "
+"nowego języka. Aktualizacji podlegałyby następujące katalogi:"
 
 #: ../update.c:164
 msgid "_Keep Old Names"
-msgstr "Z_achowaj stare nazwy"
+msgstr "Z_achowaj poprzednie nazwy"
 
 #: ../update.c:165
 msgid "_Update Names"
@@ -41,11 +46,11 @@ msgstr "_Zaktualizuj nazwy"
 
 #: ../update.c:190
 msgid "Current folder name"
-msgstr "Bieżąca nazwa folderu"
+msgstr "Bieżąca nazwa katalogu"
 
 #: ../update.c:195
 msgid "New folder name"
-msgstr "Nowy nazwa folderu"
+msgstr "Nowa nazwa katalogu"
 
 #: ../update.c:205
 msgid "Note that existing content will not be moved."
@@ -53,19 +58,19 @@ msgstr "Bieżąca zawartość nie zostanie przeniesiona."
 
 #: ../update.c:212
 msgid "_Don't ask me this again"
-msgstr "_Nie zadawaj pytania ponownie"
+msgstr "_Bez ponownego pytania"
 
 #: ../update.c:229
 msgid "There was an error updating the folders"
-msgstr "Wystąpił błąd podczas aktualizowania folderów"
+msgstr "Wystąpił błąd podczas aktualizowania katalogów"
 
 #: ../user-dirs-update-gtk.desktop.in.h:1
 msgid "Update common folders names to match current locale"
-msgstr "Aktualizowanie nazw folderów do bieżących ustawień językowych"
+msgstr "Aktualizowanie nazw katalogów do bieżących ustawień językowych"
 
 #: ../user-dirs-update-gtk.desktop.in.h:2
 msgid "User folders update"
-msgstr "Aktualizacja folderów użytkownika"
+msgstr "Aktualizacja katalogów użytkownika"
 
 #~ msgid "The update would change the following folders:"
 #~ msgstr "Aktualizacja zmieniłaby nazwy następujących folderów:"
