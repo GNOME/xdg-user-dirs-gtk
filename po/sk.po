@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: xdg-user-dirs-gtk\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=xdg-"
 "user-dirs-gtk&component=general\n"
-"POT-Creation-Date: 2009-04-19 23:20+0000\n"
-"PO-Revision-Date: 2009-05-22 19:14+0200\n"
+"POT-Creation-Date: 2009-06-02 22:04+0000\n"
+"PO-Revision-Date: 2009-06-04 20:35+0200\n"
 "Last-Translator: Pavol Šimo <palo.simo@gmail.com>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -49,7 +49,7 @@ msgstr "Nový názov priečinka"
 
 #: ../update.c:205
 msgid "Note that existing content will not be moved."
-msgstr "Poznámka: existujúci obsah nebude premiestnený."
+msgstr "Poznámka: Existujúci obsah nebude premiestnený."
 
 #: ../update.c:212
 msgid "_Don't ask me this again"
@@ -57,7 +57,7 @@ msgstr "Túto otázku viac _nezobrazovať"
 
 #: ../update.c:229
 msgid "There was an error updating the folders"
-msgstr "Pri aktualizácií priečinkov nastala chyba"
+msgstr "Pri aktualizácii priečinkov nastala chyba"
 
 #: ../user-dirs-update-gtk.desktop.in.h:1
 msgid "Update common folders names to match current locale"
