@@ -1,0 +1,72 @@
+# Galician translation of xdg-user-dirs-gtk.
+# Copyright (C) 2009 xdg-user-dirs-gtk's COPYRIGHT HOLDER
+# This file is distributed under the same license as the xdg-user-dirs-gtk package.
+#
+# Fran Diéguez <fran.dieguez@mabishu.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: xdg-user-dirs-gtk master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug."
+"cgi?product=xdg-user-dirs-gtk&component=general\n"
+"POT-Creation-Date: 2009-06-05 08:51+0000\n"
+"PO-Revision-Date: 2009-06-30 13:25+0200\n"
+"Last-Translator: \n"
+"Language-Team: American English <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../update.c:159
+msgid "Update standard folders to current language?"
+msgstr "Actualizar os cartafoles estándar á linguaxe actual?"
+
+#: ../update.c:161
+msgid ""
+"You have logged in in a new language. You can automatically update the names "
+"of some standard folders in your home folder to match this language. The "
+"update would change the following folders:"
+msgstr ""
+"Vostede acaba de iniciar sesión nunha nova linguaxe. Pode actualizar "
+"automaticamente "
+"os nomes de algúns cartafoles estándar no seu cartafol de inicio para "
+"coincidir con esta "
+"linguaxe. A actualización cambiará os seguintes cartafoles:"
+
+#: ../update.c:164
+msgid "_Keep Old Names"
+msgstr "_Manter os nomes antigos"
+
+#: ../update.c:165
+msgid "_Update Names"
+msgstr "_Actualizar nomes"
+
+#: ../update.c:190
+msgid "Current folder name"
+msgstr "Nome actual do cartafol"
+
+#: ../update.c:195
+msgid "New folder name"
+msgstr "Novo nome do cartafol"
+
+#: ../update.c:205
+msgid "Note that existing content will not be moved."
+msgstr "Teña en conta que o contido existente non será movido."
+
+#: ../update.c:212
+msgid "_Don't ask me this again"
+msgstr "_Non me preguntar de novo"
+
+#: ../update.c:229
+msgid "There was an error updating the folders"
+msgstr "Houbo un erro ao actualizar os cartafoles"
+
+#: ../user-dirs-update-gtk.desktop.in.h:1
+msgid "Update common folders names to match current locale"
+msgstr "Actualizar nomes dos cartafoles comúns para coincidir co locale actual"
+
+#: ../user-dirs-update-gtk.desktop.in.h:2
+msgid "User folders update"
+msgstr ""
+
