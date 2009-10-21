@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xdg-user-dirs-gtk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-03-16 23:08+0100\n"
+"POT-Creation-Date: 2009-10-21 02:43-0500\n"
 "PO-Revision-Date: 2009-03-15 23:54-0500\n"
 "Last-Translator: Reşat SABIQ <tilde.birlik@gmail.com>\n"
 "Language-Team: Qırımtatarca (Qırım Türkçesi) <tilde-birlik-tercime@lists."
@@ -15,12 +15,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
+"X-Launchpad-Export-Date: 2009-10-21 06:44+0000\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 # tüklü
 #: ../update.c:159
 msgid "Update standard folders to current language?"
-msgstr "Standart fihristler ağımdaki tilge uyğunlaştırılsınmı?"
+msgstr "Standart cilbentler ağımdaki tilge uyğunlaştırılsınmı?"
 
 #: ../update.c:161
 msgid ""
@@ -28,9 +29,9 @@ msgid ""
 "of some standard folders in your home folder to match this language. The "
 "update would change the following folders:"
 msgstr ""
-"Yañı bir tilde içeri imzalandıñız. Ev fihristiñizdeki bazı standart "
-"fihristlerniñ isimlerini bu tilge uyğunlaştırmaq içün avtomatik olaraq "
-"yañarta bilirsiñiz. Bu yañartma aşağıdaki fihristlerni deñiştirir edi:"
+"Yañı bir tilde içeri imzalandıñız. Ev cilbentiñizdeki bazı standart "
+"cilbentlerniñ isimlerini bu tilge uyğunlaştırmaq içün avtomatik olaraq "
+"yañarta bilirsiñiz. Bu yañartma aşağıdaki cilbentlerni deñiştirir edi:"
 
 #: ../update.c:164
 msgid "_Keep Old Names"
@@ -42,11 +43,11 @@ msgstr "_İsimlerni Yañart"
 
 #: ../update.c:190
 msgid "Current folder name"
-msgstr "Ağımdaki fihrist ismi"
+msgstr "Ağımdaki cilbent ismi"
 
 #: ../update.c:195
 msgid "New folder name"
-msgstr "Yañı fihrist ismi"
+msgstr "Yañı cilbent ismi"
 
 #: ../update.c:205
 msgid "Note that existing content will not be moved."
@@ -58,13 +59,13 @@ msgstr "Bunı maña bir daa sora_ma"
 
 #: ../update.c:229
 msgid "There was an error updating the folders"
-msgstr "Fihristlerni yañartqanda bir hata bar edi"
+msgstr "Cilbentlerni yañartqanda bir hata bar edi"
 
 # tüklü
 #: ../user-dirs-update-gtk.desktop.in.h:1
 msgid "Update common folders names to match current locale"
-msgstr "Umumiy fihristlerniñ isimlerini ağımdaki tilge (mevzige) uyğunlaştır"
+msgstr "Umumiy cilbentlerniñ isimlerini ağımdaki tilge uyğunlaştır"
 
 #: ../user-dirs-update-gtk.desktop.in.h:2
 msgid "User folders update"
-msgstr "Qullanıcı fihristleriniñ yañartıluvı"
+msgstr "Qullanıcı cilbentleriniñ yañartıluvı"
