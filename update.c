@@ -287,8 +287,6 @@ main (int argc, char *argv[])
   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
   textdomain (GETTEXT_PACKAGE);
 
-  gtk_init (&argc, &argv);
-
   old_entries = parse_xdg_dirs (NULL);
   old_locale = parse_xdg_dirs_locale ();
   locale = g_strdup (setlocale (LC_MESSAGES, NULL));
@@ -299,8 +297,11 @@ main (int argc, char *argv[])
   if (old_locale && *old_locale != 0 &&
       strcmp (old_locale, locale) != 0 &&
       has_xdg_translation ())
-    update_locale (old_entries);
-
+    {
+       gtk_init (&argc, &argv);
+       update_locale (old_entries);
+    }
+  
   new_entries = parse_xdg_dirs (NULL);
 
   bookmarks = parse_gtk_bookmarks (NULL);
