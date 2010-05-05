@@ -1,5 +1,4 @@
-# translation of ru.po to Russian
-# Ukrainian translation of xdg-user-dirs-gtk.
+# translation of xdg-user-dirs-gtk to Russian
 # Copyright (C) 2009, 2010 Free Software Foundation, Inc.
 # This file is distributed under the same license as the xdg-user-dirs-gtk package.
 #
