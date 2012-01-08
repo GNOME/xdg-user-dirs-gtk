@@ -6,10 +6,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: xdg-user-dirs-gtk trunk\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-14 00:24+0900\n"
-"PO-Revision-Date: 2008-04-14 00:23+0900\n"
-"Last-Translator: Takeshi AIHANA <takeshi.aihana@gmail.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=xdg-"
+"user-dirs-gtk&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2011-09-11 14:47+0000\n"
+"PO-Revision-Date: 2012-01-01 19:56+0900\n"
+"Last-Translator: Jiro Matsuzawa <jmatsuzawa@src.gnome.org>\n"
 "Language-Team: Japanese Takeshi AIHANA <takeshi.aihana@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,7 +18,7 @@ msgstr ""
 
 #: ../update.c:159
 msgid "Update standard folders to current language?"
-msgstr "標準フォルダの名前を現在の言語に合わせて更新しますか？"
+msgstr "標準フォルダーの名前を現在の言語に合わせて更新しますか？"
 
 #: ../update.c:161
 msgid ""
@@ -25,9 +26,9 @@ msgid ""
 "of some standard folders in your home folder to match this language. The "
 "update would change the following folders:"
 msgstr ""
-"新しいロケールでログインしました。お使いのホームにある標準フォルダの名前を新"
-"しいロケールに合わせて自動的に更新できます。この更新は次に示すフォルダの名前"
-"を変更します:"
+"新しいロケールでログインしました。お使いのホームにある標準フォルダーの名前を"
+"新しいロケールに合わせて自動的に更新できます。この更新は次に示すフォルダーの"
+"名前を変更します:"
 
 #: ../update.c:164
 msgid "_Keep Old Names"
@@ -39,15 +40,15 @@ msgstr "名前を更新する(_U)"
 
 #: ../update.c:190
 msgid "Current folder name"
-msgstr "現在のフォルダ名"
+msgstr "現在のフォルダー名"
 
 #: ../update.c:195
 msgid "New folder name"
-msgstr "新しいフォルダ名"
+msgstr "新しいフォルダー名"
 
 #: ../update.c:205
 msgid "Note that existing content will not be moved."
-msgstr "(フォルダの中にある内容は移動しません)"
+msgstr "(フォルダーの中にある内容は移動しません)"
 
 #: ../update.c:212
 msgid "_Don't ask me this again"
@@ -55,12 +56,12 @@ msgstr "次回から表示しない(_D)"
 
 #: ../update.c:229
 msgid "There was an error updating the folders"
-msgstr "フォルダを更新する際にエラーが発生しました"
+msgstr "フォルダーを更新する際にエラーが発生しました"
 
 #: ../user-dirs-update-gtk.desktop.in.h:1
 msgid "Update common folders names to match current locale"
-msgstr "標準フォルダの名前を現在の言語に合わせて更新します"
+msgstr "標準フォルダーの名前を現在の言語に合わせて更新します"
 
 #: ../user-dirs-update-gtk.desktop.in.h:2
 msgid "User folders update"
-msgstr "ユーザ・フォルダの更新"
+msgstr "ユーザー・フォルダーの更新"
