@@ -167,8 +167,9 @@ update_locale (XdgDirEntry *old_entries)
 
   gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_NO);
 
-  vbox = gtk_vbox_new (FALSE, 6);
-  gtk_box_pack_start (GTK_BOX (GTK_MESSAGE_DIALOG (dialog)->label->parent), vbox, TRUE, TRUE, 0);
+  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))),
+                      vbox, TRUE, TRUE, 0);
   gtk_widget_show (vbox);
 
   scrolledwindow = gtk_scrolled_window_new (NULL, NULL);
