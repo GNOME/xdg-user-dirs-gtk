@@ -1,3 +1,9 @@
+Major changes in 0.9 are:
+* Port to Gtk 3
+* Add Unity and LXDE to desktop file OnlyShowIn
+* Faster startup by only initializing Gtk when needed
+* Translation updates
+
 Major changes in 0.8 are:
 * Translation updates
 
