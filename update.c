@@ -305,7 +305,7 @@ main (int argc, char *argv[])
   
   new_entries = parse_xdg_dirs (NULL);
 
-  bookmarks = parse_gtk_bookmarks (NULL);
+  bookmarks = parse_gtk_bookmarks ();
 
   modified_bookmarks = FALSE;
   if (bookmarks == NULL)
@@ -372,7 +372,7 @@ main (int argc, char *argv[])
     }
 
   if (modified_bookmarks)
-    save_gtk_bookmarks (NULL, bookmarks);
+    save_gtk_bookmarks (bookmarks);
   
   g_free (new_entries);
   g_free (old_entries);

@@ -112,24 +112,18 @@ parse_xdg_dirs (const char *config_file)
 }
 
 GList *
-parse_gtk_bookmarks (const char *filename)
+parse_gtk_bookmarks (void)
 {
-  char *filename_free, *contents;
+  char *filename, *contents;
   GError **error = NULL;
   char **lines;
   int i;
   GtkBookmark *bookmark;
   GList *bookmarks;
 
-  filename_free = NULL;
-  if (filename == NULL)
-    {
-      filename_free = g_build_filename (g_get_home_dir (),
-					".gtk-bookmarks",
-					NULL);
-      filename = (const char *)filename_free;
-    }
-
+  filename = g_build_filename (g_get_home_dir (),
+                               ".gtk-bookmarks",
+                               NULL);
   bookmarks = NULL;
   
   /* Read new list from file */
@@ -161,29 +155,22 @@ parse_gtk_bookmarks (const char *filename)
 	}
       g_strfreev (lines);
     }
-  g_free (filename_free);
+  g_free (filename);
   
   return bookmarks;
 }
 
 void
-save_gtk_bookmarks (const char *filename,
-		    GList *bookmarks)
+save_gtk_bookmarks (GList *bookmarks)
 {
-  char *filename_free;
+  char *filename;
   GString *str;
   GList *l;
   GtkBookmark *bookmark;
 
-  filename_free = NULL;
-  if (filename == NULL)
-    {
-      filename_free = g_build_filename (g_get_home_dir (),
-					".gtk-bookmarks",
-					NULL);
-      filename = (const char *)filename_free;
-    }
-  
+  filename = g_build_filename (g_get_home_dir (),
+                               ".gtk-bookmarks",
+                               NULL); 
   str = g_string_new ("");
 
   for (l = bookmarks; l != NULL; l = l->next)
@@ -199,5 +186,5 @@ save_gtk_bookmarks (const char *filename,
   g_file_set_contents (filename, str->str, str->len, NULL);
   
   g_string_free (str, TRUE);
-  g_free (filename_free);
+  g_free (filename);
 }
