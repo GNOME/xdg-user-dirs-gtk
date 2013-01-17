@@ -1,6 +1,33 @@
 #include "parse.h"
 #include <string.h>
 
+static char *
+get_gtk_bookmarks_filename (void)
+{
+  char *filename, *legacy_filename;
+  gboolean exists, legacy_exists;
+
+  filename = g_build_filename (g_get_user_config_dir (), "gtk-3.0", "bookmarks", NULL);
+  exists = g_file_test (filename, G_FILE_TEST_EXISTS);
+
+  if (exists)
+    return filename;
+
+  legacy_filename = g_build_filename (g_get_home_dir (), ".gtk-bookmarks", NULL);
+  legacy_exists = g_file_test (legacy_filename, G_FILE_TEST_EXISTS);
+
+  if (legacy_exists)
+    {
+      g_free (filename);
+      return legacy_filename;
+    }
+
+  g_free (legacy_filename);
+
+  /* if neither exist, return the new filename */
+  return filename;
+}
+
 char *
 parse_xdg_dirs_locale (void)
 {
@@ -121,9 +148,7 @@ parse_gtk_bookmarks (void)
   GtkBookmark *bookmark;
   GList *bookmarks;
 
-  filename = g_build_filename (g_get_home_dir (),
-                               ".gtk-bookmarks",
-                               NULL);
+  filename = get_gtk_bookmarks_filename ();
   bookmarks = NULL;
   
   /* Read new list from file */
@@ -163,14 +188,12 @@ parse_gtk_bookmarks (void)
 void
 save_gtk_bookmarks (GList *bookmarks)
 {
-  char *filename;
+  char *filename, *dirname;
   GString *str;
   GList *l;
   GtkBookmark *bookmark;
 
-  filename = g_build_filename (g_get_home_dir (),
-                               ".gtk-bookmarks",
-                               NULL); 
+  filename = get_gtk_bookmarks_filename ();
   str = g_string_new ("");
 
   for (l = bookmarks; l != NULL; l = l->next)
@@ -183,8 +206,11 @@ save_gtk_bookmarks (GList *bookmarks)
 	g_string_append_printf (str, "%s\n", bookmark->uri);
     }
 
-  g_file_set_contents (filename, str->str, str->len, NULL);
-  
+  dirname = g_path_get_dirname (filename);
+  if (g_mkdir_with_parents (dirname, 0700) == 0)
+    g_file_set_contents (filename, str->str, str->len, NULL);
+
   g_string_free (str, TRUE);
   g_free (filename);
+  g_free (dirname);
 }
