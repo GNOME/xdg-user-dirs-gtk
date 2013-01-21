@@ -1,8 +1,8 @@
 AC_INIT(parse.c)
 
 AM_INIT_AUTOMAKE(xdg-user-dirs-gtk, 0.10)
-AM_CONFIG_HEADER(config.h)
-	
+AC_CONFIG_HEADERS([config.h])
+
 AM_SANITY_CHECK
 AM_MAINTAINER_MODE
 
