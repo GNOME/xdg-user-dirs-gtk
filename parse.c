@@ -36,7 +36,7 @@ parse_xdg_dirs_locale (void)
 
   locale = NULL;
   file = g_build_filename (g_get_user_config_dir (),
-			   "user-dirs.locale", NULL);
+                           "user-dirs.locale", NULL);
   if (g_file_get_contents (file, &content, NULL, NULL))
     locale = g_strchug (g_strchomp (content));
   g_free (file);
@@ -62,7 +62,7 @@ parse_xdg_dirs (const char *config_file)
   if (config_file == NULL)
     {
       config_file_free = g_build_filename (g_get_user_config_dir (),
-					   "user-dirs.dirs", NULL);
+                                           "user-dirs.dirs", NULL);
       config_file = (const char *)config_file_free;
     }
 
@@ -71,64 +71,64 @@ parse_xdg_dirs (const char *config_file)
       lines = g_strsplit (data, "\n", 0);
       g_free (data);
       for (i = 0; lines[i] != NULL; i++)
-	{
-	  p = lines[i];
-	  while (g_ascii_isspace (*p))
-	    p++;
+        {
+          p = lines[i];
+          while (g_ascii_isspace (*p))
+            p++;
       
-	  if (*p == '#')
-	    continue;
+          if (*p == '#')
+            continue;
       
-	  value = strchr (p, '=');
-	  if (value == NULL)
-	    continue;
-	  *value++ = 0;
+          value = strchr (p, '=');
+          if (value == NULL)
+            continue;
+          *value++ = 0;
       
-	  g_strchug (g_strchomp (p));
-	  if (!g_str_has_prefix (p, "XDG_"))
-	    continue;
-	  if (!g_str_has_suffix (p, "_DIR"))
-	    continue;
-	  type_start = p + 4;
-	  type_end = p + strlen (p) - 4;
+          g_strchug (g_strchomp (p));
+          if (!g_str_has_prefix (p, "XDG_"))
+            continue;
+          if (!g_str_has_suffix (p, "_DIR"))
+            continue;
+          type_start = p + 4;
+          type_end = p + strlen (p) - 4;
       
-	  while (g_ascii_isspace (*value))
-	    value++;
+          while (g_ascii_isspace (*value))
+            value++;
       
-	  if (*value != '"')
-	    continue;
-	  value++;
+          if (*value != '"')
+            continue;
+          value++;
       
-	  relative = FALSE;
-	  if (g_str_has_prefix (value, "$HOME/"))
-	    {
-	      relative = TRUE;
-	      value += 6;
-	    }
-	  else if (*value != '/')
-	    continue;
-	  
-	  d = unescaped = g_malloc (strlen (value) + 1);
-	  while (*value && *value != '"')
-	    {
-	      if ((*value == '\\') && (*(value + 1) != 0))
-		value++;
-	      *d++ = *value++;
-	    }
-	  *d = 0;
+          relative = FALSE;
+          if (g_str_has_prefix (value, "$HOME/"))
+            {
+              relative = TRUE;
+              value += 6;
+            }
+          else if (*value != '/')
+            continue;
+          
+          d = unescaped = g_malloc (strlen (value) + 1);
+          while (*value && *value != '"')
+            {
+              if ((*value == '\\') && (*(value + 1) != 0))
+                value++;
+              *d++ = *value++;
+            }
+          *d = 0;
       
-	  *type_end = 0;
-	  dir.type = g_strdup (type_start);
-	  if (relative)
-	    {
-	      dir.path = g_build_filename (g_get_home_dir (), unescaped, NULL);
-	      g_free (unescaped);
-	    }
-	  else 
-	    dir.path = unescaped;
+          *type_end = 0;
+          dir.type = g_strdup (type_start);
+          if (relative)
+            {
+              dir.path = g_build_filename (g_get_home_dir (), unescaped, NULL);
+              g_free (unescaped);
+            }
+          else 
+            dir.path = unescaped;
       
-	  g_array_append_val (array, dir);
-	}
+          g_array_append_val (array, dir);
+        }
       
       g_strfreev (lines);
     }
@@ -157,27 +157,27 @@ parse_gtk_bookmarks (void)
       lines = g_strsplit (contents, "\n", -1);
       g_free (contents);
       for (i = 0; lines[i]; i++)
-	{
-	  if (lines[i][0])
-	    {
-	      /* gtk 2.7/2.8 might have labels appended to bookmarks which are separated by a space */
-	      /* we must seperate the bookmark uri and the potential label */
-	      char *space;
+        {
+          if (lines[i][0])
+            {
+              /* gtk 2.7/2.8 might have labels appended to bookmarks which are separated by a space */
+              /* we must seperate the bookmark uri and the potential label */
+              char *space;
 
-	      bookmark = g_new0 (GtkBookmark, 1);
+              bookmark = g_new0 (GtkBookmark, 1);
 
-	      bookmark->label = NULL;
-	      space = strchr (lines[i], ' ');
-	      if (space)
-		{
-		  *space = '\0';
-		  bookmark->label = g_strdup (space + 1);
-		}
-	      bookmark->uri = g_strdup (lines[i]);
+              bookmark->label = NULL;
+              space = strchr (lines[i], ' ');
+              if (space)
+                {
+                  *space = '\0';
+                  bookmark->label = g_strdup (space + 1);
+                }
+              bookmark->uri = g_strdup (lines[i]);
 
-	      bookmarks = g_list_append (bookmarks, bookmark);
-	    }
-	}
+              bookmarks = g_list_append (bookmarks, bookmark);
+            }
+        }
       g_strfreev (lines);
     }
   g_free (filename);
@@ -201,9 +201,9 @@ save_gtk_bookmarks (GList *bookmarks)
       bookmark = l->data;
 
       if (bookmark->label)
-	g_string_append_printf (str, "%s %s\n", bookmark->uri, bookmark->label);
+        g_string_append_printf (str, "%s %s\n", bookmark->uri, bookmark->label);
       else
-	g_string_append_printf (str, "%s\n", bookmark->uri);
+        g_string_append_printf (str, "%s\n", bookmark->uri);
     }
 
   dirname = g_path_get_dirname (filename);
