@@ -1,0 +1,69 @@
+# Croatian translation for xdg-user-dirs-gtk
+# Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
+# This file is distributed under the same license as the xdg-user-dirs-gtk package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xdg-user-dirs-gtk\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2012-07-20 05:15+0000\n"
+"PO-Revision-Date: 2009-10-04 07:37+0000\n"
+"Last-Translator: Saša Teković <Unknown>\n"
+"Language-Team: Croatian <hr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2012-08-31 04:52+0000\n"
+"X-Generator: Launchpad (build 15887)\n"
+
+#: ../update.c:159
+msgid "Update standard folders to current language?"
+msgstr "Ažurirati uobičajene direktorije prema trenutnom jeziku?"
+
+#: ../update.c:161
+msgid ""
+"You have logged in in a new language. You can automatically update the names "
+"of some standard folders in your home folder to match this language. The "
+"update would change the following folders:"
+msgstr ""
+"Prijavili ste se s novim jezikom. Možete automatski ažurirati nazive nekih "
+"uobičajenih direktorija u svojoj osobnoj mapi, kako bi odgovarali ovom "
+"jeziku. Ažuriranje bi promijenilo sljedeće direktorije:"
+
+#: ../update.c:164
+msgid "_Keep Old Names"
+msgstr "_Zadrži stare nazive"
+
+#: ../update.c:165
+msgid "_Update Names"
+msgstr "_Ažuriraj nazive"
+
+#: ../update.c:191
+msgid "Current folder name"
+msgstr "Trenutni naziv direktorija"
+
+#: ../update.c:196
+msgid "New folder name"
+msgstr "Novi naziv direktorija"
+
+#: ../update.c:206
+msgid "Note that existing content will not be moved."
+msgstr "Znajte da postojeći sadržaj neće biti premješten."
+
+#: ../update.c:213
+msgid "_Don't ask me this again"
+msgstr "_Nemoj me upitati ponovno"
+
+#: ../update.c:230
+msgid "There was an error updating the folders"
+msgstr "Došlo je do greške prilikom ažuriranja direktorija"
+
+#: ../user-dirs-update-gtk.desktop.in.h:1
+msgid "User folders update"
+msgstr "Ažuriranje korisničkih direktorija"
+
+#: ../user-dirs-update-gtk.desktop.in.h:2
+msgid "Update common folders names to match current locale"
+msgstr ""
+"Ažuriraj nazive uobičajenih direktorija kako bi odgovarali trenutnom jeziku"
