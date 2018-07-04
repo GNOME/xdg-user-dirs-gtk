@@ -321,6 +321,7 @@ main (int argc, char *argv[])
       strcmp (old_locale, locale) != 0 &&
       has_xdg_translation ())
     {
+       g_set_prgname ("user-dirs-update-gtk");
        gtk_init (&argc, &argv);
        update_locale (old_entries);
     }
