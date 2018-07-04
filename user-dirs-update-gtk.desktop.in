@@ -5,6 +5,7 @@ _Name=User folders update
 _Comment=Update common folders names to match current locale
 Terminal=false
 OnlyShowIn=GNOME;LXDE;Unity;
+NoDisplay=true
 Type=Application
 StartupNotify=false
 X-KDE-autostart-after=panel
