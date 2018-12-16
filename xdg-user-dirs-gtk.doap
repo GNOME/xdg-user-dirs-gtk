@@ -6,7 +6,7 @@
 
   <name xml:lang="en">xdg-user-dirs-gtk</name>
   <shortdesc xml:lang="en">Gtk UI for xdg-user-dirs</shortdesc>
-  <category rdf:resource="http://api.gnome.org/doap-extensions#desktop" />
+  <!-- <category rdf:resource="http://api.gnome.org/doap-extensions#desktop" /> -->
 
   <maintainer>
     <foaf:Person>
