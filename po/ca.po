@@ -28,8 +28,8 @@ msgid ""
 "of some standard folders in your home folder to match this language. The "
 "update would change the following folders:"
 msgstr ""
-"Heu entrat a la sessió amb un idioma nou. Podeu actualitzar el nom de les "
-"carpetes estàndard de la carpeta d'inici a l'idioma nou. L'actualització "
+"Heu entrat a la sessió amb un idioma nou. Podeu actualitzar el nom d'algunes de les "
+"carpetes estàndard de la vostra carpeta d'inici a l'idioma nou. L'actualització "
 "afectarà les carpetes següents:"
 
 #: ../update.c:191
@@ -69,6 +69,3 @@ msgid "Update common folders names to match current locale"
 msgstr ""
 "Actualitza els noms de les carpetes comunes per a coincidir amb l'idioma "
 "actual"
-
-#~ msgid "The update would change the following folders:"
-#~ msgstr "L'actualització canviarà les carpetes següents:"
