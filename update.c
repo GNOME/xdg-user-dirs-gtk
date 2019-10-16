@@ -1,5 +1,3 @@
-#include "config.h"
-
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <unistd.h>
@@ -106,7 +104,7 @@ update_locale (XdgDirEntry *old_entries)
     return;
   close (fd);
   
-  cmdline = g_strdup_printf (XDG_USER_DIRS_UPDATE " --force --dummy-output %s", filename);
+  cmdline = g_strdup_printf ("xdg-user-dirs-update --force --dummy-output %s", filename);
   if (!g_spawn_command_line_sync  (cmdline, &std_out, &std_err, &exit_status, NULL))
     {
       g_free (std_out);
