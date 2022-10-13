@@ -1,6 +1,6 @@
 AC_PREREQ(2.53)
 
-AC_INIT([xdg-user-dirs-gtk], [0.10],
+AC_INIT([xdg-user-dirs-gtk], [0.11],
         [http://bugzilla.gnome.org/enter_bug.cgi?product=xdg-user-dirs-gtk])
 AC_CONFIG_SRCDIR([parse.c])
 AM_INIT_AUTOMAKE([1.9 dist-xz no-dist-gzip tar-ustar foreign])
