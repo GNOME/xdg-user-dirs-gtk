@@ -6,6 +6,9 @@ autostartdir = $(sysconfdir)/xdg/autostart
 autostart_in_files = user-dirs-update-gtk.desktop.in
 autostart_DATA = $(autostart_in_files:.desktop.in=.desktop)
 
+desktopdir = $(datadir)/applications
+desktop_DATA = $(autostart_in_files:.desktop.in=.desktop)
+
 @INTLTOOL_DESKTOP_RULE@
 
 INCLUDES =					\
