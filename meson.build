@@ -19,8 +19,7 @@ executable ('xdg-user-dirs-gtk-update',
 
 i18n = import('i18n')
 
-i18n.merge_file ('desktop-file',
-                 input: 'user-dirs-update-gtk.desktop.in',
+i18n.merge_file (input: 'user-dirs-update-gtk.desktop.in',
                  output: 'user-dirs-update-gtk.desktop',
                  install: true,
                  install_dir: join_paths (sysconfdir, 'xdg', 'autostart'),
