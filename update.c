@@ -243,7 +243,7 @@ update_locale (XdgDirEntry *old_entries)
 
   if (response == GTK_RESPONSE_YES)
     {
-      if (!g_spawn_command_line_sync (XDG_USER_DIRS_UPDATE " --force", NULL, NULL, &exit_status, NULL) ||
+      if (!g_spawn_command_line_sync ("xdg-user-dirs-update --force", NULL, NULL, &exit_status, NULL) ||
           !WIFEXITED(exit_status) ||
           WEXITSTATUS(exit_status) != 0)
         {

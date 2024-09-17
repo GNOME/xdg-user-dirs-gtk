@@ -15,8 +15,7 @@ executable ('xdg-user-dirs-gtk-update',
               'update.c' ],
             dependencies: dependency('gtk+-3.0'),
             c_args: [ '-DGETTEXT_PACKAGE="xdg-user-dirs-gtk"',
-                      '-DGLIBLOCALEDIR="@0@"'.format (localedir),
-                      '-DXDG_USER_DIRS_UPDATE=""' ],
+                      '-DGLIBLOCALEDIR="@0@"'.format (localedir) ],
             install: true )
 
 i18n = import('i18n')
