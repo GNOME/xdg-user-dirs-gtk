@@ -8,6 +8,8 @@ project(
 localedir = join_paths (get_option ('prefix'), get_option ('localedir'))
 sysconfdir = join_paths (get_option ('prefix'), get_option ('sysconfdir'))
 
+find_program('xdg-user-dirs-update', required: true)
+
 executable ('xdg-user-dirs-gtk-update',
             [ 'parse.c',
               'update.c' ],
