@@ -4,6 +4,7 @@
 #include <string.h>
 #include <libintl.h>
 #include <locale.h>
+#include <adwaita.h>
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
 #include <glib/gstdio.h>
@@ -79,22 +80,102 @@ save_locale (void)
   fclose (file);
 }
 
-static void
-update_locale (XdgDirEntry *old_entries)
+typedef struct
 {
-  XdgDirEntry *new_entries, *entry;
-  GtkWidget *dialog, *vbox;
+  XdgDirEntry *old_entries;
+  XdgDirEntry *new_entries;
+} EntryData;
+
+static void
+on_response (AdwDialog *self,
+             gchar     *response,
+             EntryData *data)
+{
+  int exit_status;
+  guint i;
+  XdgDirEntry *old_entries = data->old_entries;
+  XdgDirEntry *new_entries = data->new_entries;
+  XdgDirEntry *entry;
+
+  if (g_strcmp0 (response, "update") == 0)
+    {
+      if (!g_spawn_command_line_sync ("xdg-user-dirs-update --force", NULL, NULL, &exit_status, NULL) ||
+          !WIFEXITED(exit_status) ||
+          WEXITSTATUS(exit_status) != 0)
+        {
+          AdwDialog *dialog = adw_alert_dialog_new (_("There was an error updating the folders"), NULL);
+
+          adw_dialog_present (dialog, NULL);
+        }
+    else
+      {
+        /* Change succeeded, remove any leftover empty directories */
+        for (i = 0; old_entries[i].type != NULL; i++)
+          {
+            /* Never remove homedir */
+            if (strcmp (old_entries[i].path, g_get_home_dir ()) == 0)
+              continue;
+
+            /* If the old path is used by the new config, don't remove */
+            entry = find_dir_entry_by_path (new_entries, old_entries[i].path);
+            if (entry)
+              continue;
+
+            /* Remove the dir, will fail if not empty */
+            g_rmdir (old_entries[i].path);
+          }
+      }
+    }
+  else if (g_strcmp0 (response, "never") == 0)
+    {
+      save_locale ();
+    }
+
+  g_free (new_entries);
+  g_free (data);
+
+}
+
+static void
+setup (GtkSignalListItemFactory *factory,
+       GtkListItem              *list_item,
+       gpointer                  user_data)
+{
+  GtkWidget *label = gtk_label_new ("");
+  gtk_list_item_set_child (list_item, label);
+  gtk_label_set_xalign (GTK_LABEL (label), 0);
+}
+
+static void
+bind (GtkSignalListItemFactory *factory,
+      GtkListItem              *list_item,
+      gpointer                  user_data)
+{
+  GtkStringList *string_list = GTK_STRING_LIST (gtk_list_item_get_item (list_item));
+  guint pos = GPOINTER_TO_INT (user_data);
+  const char *label = gtk_string_list_get_string (string_list, pos);
+  GtkWidget *child = gtk_list_item_get_child (list_item);
+
+  gtk_label_set_label (GTK_LABEL (child), label);
+}
+
+static void
+update_locale (XdgDirEntry    *old_entries)
+{
+  XdgDirEntry *new_entries;
+  EntryData *data;
+  AdwDialog *dialog;
+  GtkWidget *vbox;
   int exit_status;
   int fd;
   char *filename;
   char *cmdline;
-  int response;
   int i, j;
-  GtkListStore *list_store;
-  GtkTreeIter iter;
-  GtkWidget *treeview, *check;
-  GtkCellRenderer *cell;
-  GtkWidget *scrolledwindow;
+  GListStore *list_store;
+  GtkSelectionModel *selection_model;
+  GtkWidget *view;
+  GtkColumnViewColumn *column;
+  GtkListItemFactory *factory;
   GtkWidget *label;
   char *std_out, *std_err;
   gboolean has_changes;
@@ -124,7 +205,7 @@ update_locale (XdgDirEntry *old_entries)
   g_unlink (filename);
   g_free (filename);
 
-  list_store = gtk_list_store_new (2, G_TYPE_STRING, G_TYPE_STRING);
+  list_store = g_list_store_new (GTK_TYPE_STRING_LIST);
   has_changes = FALSE;
   for (i = 0; old_entries[i].type != NULL; i++)
     {
@@ -137,12 +218,11 @@ update_locale (XdgDirEntry *old_entries)
           strcmp (old_entries[i].path, new_entries[j].path) != 0)
         {
           char *from, *to;
+          g_autoptr (GtkStringList) string_list = NULL;
           from = g_filename_display_name (old_entries[i].path);
           to = g_filename_display_name (new_entries[j].path);
-
-          gtk_list_store_append (list_store, &iter);
-          gtk_list_store_set (list_store, &iter,
-                              0, from, 1, to, -1);
+          string_list = gtk_string_list_new ((const char *[]){ from, to, NULL });
+          g_list_store_append (list_store, string_list);
           
           g_free (from);
           g_free (to);
@@ -160,11 +240,10 @@ update_locale (XdgDirEntry *old_entries)
       if (old_entries[i].type == NULL)
         {
           char *to;
+          g_autoptr (GtkStringList) string_list = NULL;
           to = g_filename_display_name (new_entries[j].path);
-
-          gtk_list_store_append (list_store, &iter);
-          gtk_list_store_set (list_store, &iter,
-                              0, "-", 1, to, -1);
+          string_list = gtk_string_list_new ((const char *[]){ "-", to, NULL });
+          g_list_store_append (list_store, string_list);
 
           g_free (to);
           
@@ -174,118 +253,63 @@ update_locale (XdgDirEntry *old_entries)
 
   if (!has_changes)
     {
-      g_object_unref (list_store);
       return;
     }
+
+  dialog = adw_alert_dialog_new (_("Update standard folders to current language?"),
+                                 _("You have logged in in a new language. You can automatically update the names of some standard folders in your home folder to match this language. The update would change the following folders:"));
+
+  adw_alert_dialog_add_responses (ADW_ALERT_DIALOG (dialog),
+                                  "never", _("Never Update"),
+                                  "keep", _("_Keep Old Names"),
+                                  "update", _("Update Names"),
+                                  NULL);
+  adw_alert_dialog_set_response_appearance (ADW_ALERT_DIALOG (dialog), "update", ADW_RESPONSE_SUGGESTED);
+  adw_alert_dialog_set_prefer_wide_layout (ADW_ALERT_DIALOG (dialog), TRUE);
+
+  selection_model = GTK_SELECTION_MODEL (gtk_no_selection_new (G_LIST_MODEL (list_store)));
+  view = gtk_column_view_new (selection_model);
+  gtk_widget_add_css_class (view, "frame");
+  gtk_column_view_set_show_row_separators (GTK_COLUMN_VIEW (view), TRUE);
+  gtk_column_view_set_reorderable (GTK_COLUMN_VIEW (view), FALSE);
   
-  dialog = gtk_message_dialog_new (NULL, 0,
-                                   GTK_MESSAGE_WARNING,
-                                   GTK_BUTTONS_NONE,
-                                   _("Update standard folders to current language?"));
-  gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
-                                            _("You have logged in in a new language. You can automatically update the names of some standard folders in your home folder to match this language. The update would change the following folders:"));
+  factory = gtk_signal_list_item_factory_new ();
+  g_signal_connect (factory, "setup", G_CALLBACK (setup), NULL);
+  g_signal_connect (factory, "bind", G_CALLBACK (bind), GINT_TO_POINTER (0));
 
-  gtk_dialog_add_buttons (GTK_DIALOG (dialog),
-                          _("_Keep Old Names"), GTK_RESPONSE_NO,
-                          _("_Update Names"), GTK_RESPONSE_YES,
-                          NULL);
+  column = gtk_column_view_column_new (_("Current folder name"), factory);
+  gtk_column_view_append_column (GTK_COLUMN_VIEW (view), column);
+  g_object_unref (column);
 
-  gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_NO);
+  factory = gtk_signal_list_item_factory_new ();
+  g_signal_connect (factory, "setup", G_CALLBACK (setup), NULL);
+  g_signal_connect (factory, "bind", G_CALLBACK (bind), GINT_TO_POINTER (1));
+
+  column = gtk_column_view_column_new (_("New folder name"), factory);
+  gtk_column_view_column_set_expand (column, TRUE);
+  gtk_column_view_append_column (GTK_COLUMN_VIEW (view), column);
+  g_object_unref (column);
 
   vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))),
-                      vbox, TRUE, TRUE, 0);
-  gtk_widget_show (vbox);
-
-  scrolledwindow = gtk_scrolled_window_new (NULL, NULL);
-  gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolledwindow),
-                                  GTK_POLICY_NEVER,
-                                  GTK_POLICY_NEVER);
-  gtk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (scrolledwindow),
-                                       GTK_SHADOW_IN);  
-  
-  gtk_box_pack_start (GTK_BOX (vbox), scrolledwindow, TRUE, TRUE, 0);
-  
-  treeview = gtk_tree_view_new_with_model (GTK_TREE_MODEL (list_store));
-
-  gtk_tree_selection_set_mode (gtk_tree_view_get_selection (GTK_TREE_VIEW (treeview)),
-                               GTK_SELECTION_NONE); 
-
-  cell = gtk_cell_renderer_text_new ();
-  gtk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (treeview),
-                                               -1, _("Current folder name"),
-                                               cell,
-                                               "text", 0,
-                                               NULL);
-  gtk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (treeview),
-                                               -1, _("New folder name"),
-                                               cell,
-                                               "text", 1,
-                                               NULL);
-
-  gtk_container_add (GTK_CONTAINER (scrolledwindow),
-                     treeview);
-
-  gtk_widget_show_all (scrolledwindow);
 
   label = gtk_label_new (_("Note that existing content will not be moved."));
-  gtk_label_set_line_wrap (GTK_LABEL (label), TRUE);
+  gtk_label_set_wrap (GTK_LABEL (label), TRUE);
   gtk_label_set_selectable (GTK_LABEL (label), TRUE);
   gtk_label_set_xalign (GTK_LABEL (label), 0);
-  gtk_widget_show (label);
-  gtk_box_pack_start (GTK_BOX (vbox), label, FALSE, FALSE, 0);
-
-  check = gtk_check_button_new_with_mnemonic (_("_Don't ask me this again"));
-  gtk_box_pack_start (GTK_BOX (vbox), check, FALSE, FALSE, 0);
-  gtk_widget_show (check);
   
-  response =  gtk_dialog_run (GTK_DIALOG (dialog));
+  gtk_box_append (GTK_BOX (vbox), view);
+  gtk_box_append (GTK_BOX (vbox), label);
+  adw_alert_dialog_set_extra_child (ADW_ALERT_DIALOG (dialog), vbox);
 
-  if (response == GTK_RESPONSE_YES)
-    {
-      if (!g_spawn_command_line_sync ("xdg-user-dirs-update --force", NULL, NULL, &exit_status, NULL) ||
-          !WIFEXITED(exit_status) ||
-          WEXITSTATUS(exit_status) != 0)
-        {
-          GtkWidget *error;
+  data = g_new0 (EntryData, 1);
+  data->old_entries = old_entries;
+  data->new_entries = new_entries;
 
-          error = gtk_message_dialog_new (NULL, 0,
-                                          GTK_MESSAGE_ERROR,
-                                          GTK_BUTTONS_OK,
-                                          _("There was an error updating the folders"));
-          
-          gtk_dialog_run (GTK_DIALOG (error));
-          gtk_widget_destroy (error);
-        }
-      else
-        {
-          /* Change succeeded, remove any leftover empty directories */
-          for (i = 0; old_entries[i].type != NULL; i++)
-            {
-              /* Never remove homedir */
-              if (strcmp (old_entries[i].path, g_get_home_dir ()) == 0)
-                continue;
-              
-              /* If the old path is used by the new config, don't remove */
-              entry = find_dir_entry_by_path (new_entries, old_entries[i].path);
-              if (entry)
-                continue;
+  g_signal_connect (dialog, "response", G_CALLBACK (on_response), data);
+  adw_dialog_present (dialog, NULL);
 
-              /* Remove the dir, will fail if not empty */
-              g_rmdir (old_entries[i].path);
-            }
-        }
-    }
-
-  if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (check)))
-    {
-      save_locale ();
-    }
-
-  g_free (new_entries);
-
-  gtk_widget_destroy (dialog);
-  g_object_unref (list_store);
+  while (g_list_model_get_n_items (gtk_window_get_toplevels ()) > 0)
+    g_main_context_iteration (NULL, TRUE);
 }
 
 int
@@ -320,8 +344,8 @@ main (int argc, char *argv[])
       has_xdg_translation ())
     {
        g_set_prgname ("user-dirs-update-gtk");
-       gtk_init (&argc, &argv);
-       update_locale (old_entries);
+      adw_init ();
+      update_locale (old_entries);
     }
   
   new_entries = parse_xdg_dirs (NULL);

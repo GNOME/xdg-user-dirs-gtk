@@ -14,7 +14,7 @@ find_program('xdg-user-dirs-update', required: true)
 executable ('xdg-user-dirs-gtk-update',
             [ 'parse.c',
               'update.c' ],
-            dependencies: dependency('gtk+-3.0'),
+            dependencies: [dependency('gtk4'), dependency('libadwaita-1')],
             c_args: [ '-DGETTEXT_PACKAGE="xdg-user-dirs-gtk"',
                       '-DGLIBLOCALEDIR="@0@"'.format (localedir) ],
             install: true )
