@@ -21,7 +21,7 @@ executable ('xdg-user-dirs-gtk-update',
 
 i18n = import('i18n')
 
-desktop_file =i18n.merge_file (input: 'user-dirs-update-gtk.desktop.in',
+i18n.merge_file (input: 'user-dirs-update-gtk.desktop.in',
                  output: 'user-dirs-update-gtk.desktop',
                  install: true,
                  install_dir: join_paths (sysconfdir, 'xdg', 'autostart'),
@@ -35,6 +35,6 @@ desktop_file =i18n.merge_file (input: 'user-dirs-update-gtk.desktop.in',
 # application directory.
 #
 # Mirrors commit: fe37c50488efe8ef9605df239d3e33537cf46332
-install_data(desktop_file.full_path(), install_dir: join_paths(datadir, 'applications'))
+meson.add_install_script('meson_custom_install_desktop_file.sh', skip_if_destdir: false)
 
 subdir('po')
