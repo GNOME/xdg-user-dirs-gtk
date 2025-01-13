@@ -1,25 +1,9 @@
-default:
-  interruptible: true
-  # Auto-retry jobs in case of infra failures
-  retry:
-    max: 1
-    when:
-      - 'runner_system_failure'
-      - 'stuck_or_timeout_failure'
-      - 'scheduler_failure'
-      - 'api_failure'
-
-workflow:
-  rules:
-    - if: $CI_COMMIT_BRANCH && $CI_OPEN_MERGE_REQUESTS && $CI_PIPELINE_SOURCE == "push"
-      when: never
-    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
-    - if: $CI_COMMIT_BRANCH && $CI_OPEN_MERGE_REQUESTS
-      when: never
-    - if: $CI_COMMIT_BRANCH
-
-variables:
-  COMMON_BUILD_OPTIONS: "--prefix=/usr"
+include:
+  - project: "GNOME/citemplates"
+    file: "templates/default-rules.yml"
+  - component: gitlab.gnome.org/GNOME/citemplates/gnomeos-basic-ci@master
+    inputs:
+      job-name: "build-gnomeos"
 
 .build:
   stage: "build"
@@ -48,7 +32,7 @@ build-fedora:
   extends: ".build"
   image: "fedora:41"
   variables:
-    MESON_OPTIONS: "$COMMON_BUILD_OPTIONS"
+    MESON_OPTIONS: ""
     DEPENDENCIES: >-
       desktop-file-utils
       gcc
@@ -62,9 +46,3 @@ build-fedora:
   before_script:
     - dnf upgrade -y
     - dnf install -y --setopt=install_weak_deps=false $DEPENDENCIES
-
-build-gnomeos:
-  extends: ".build"
-  image: "quay.io/gnome_infrastructure/gnome-build-meta:core-nightly"
-  variables:
-    MESON_OPTIONS: "$COMMON_BUILD_OPTIONS"
