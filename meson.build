@@ -2,7 +2,7 @@ project(
   'xdg-user-dirs-gtk', 'c',
         version : '0.14',
         license : 'GPL-2.0-or-later',
-  meson_version : '>= 0.50.0'
+  meson_version : '>= 1.0.0'
 )
 
 localedir = join_paths (get_option ('prefix'), get_option ('localedir'))
