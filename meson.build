@@ -8,6 +8,8 @@ project(
 localedir = join_paths (get_option ('prefix'), get_option ('localedir'))
 sysconfdir = join_paths (get_option ('prefix'), get_option ('sysconfdir'))
 datadir = join_paths (get_option ('prefix'), get_option ('datadir'))
+applicationsdir = join_paths (datadir, 'applications')
+autostartdir = join_paths (sysconfdir, 'xdg', 'autostart')
 
 find_program('xdg-user-dirs-update', required: true)
 
@@ -24,7 +26,7 @@ i18n = import('i18n')
 i18n.merge_file (input: 'user-dirs-update-gtk.desktop.in',
                  output: 'user-dirs-update-gtk.desktop',
                  install: true,
-                 install_dir: join_paths (sysconfdir, 'xdg', 'autostart'),
+                 install_dir: autostartdir,
                  po_dir: 'po',
                  type: 'desktop')
 
@@ -35,6 +37,6 @@ i18n.merge_file (input: 'user-dirs-update-gtk.desktop.in',
 # application directory.
 #
 # Mirrors commit: fe37c50488efe8ef9605df239d3e33537cf46332
-meson.add_install_script('meson_custom_install_desktop_file.sh', skip_if_destdir: false)
+meson.add_install_script('meson_custom_install_desktop_file.sh', applicationsdir, autostartdir, skip_if_destdir: false)
 
 subdir('po')
