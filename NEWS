@@ -1,3 +1,9 @@
+Major changes in 0.14 are:
+*   build: Respect directory options in post install script
+*   desktop: Fix translatable string merging
+*   meson: Bump minimum version to 1.0.0
+*   meson: Use SPDX for license
+
 Major changes in 0.13 are:
 * meson: Do not fail if destdir isn't set
 * meson: Install user-dirs-update-gtk.desktop in the correct datadir
