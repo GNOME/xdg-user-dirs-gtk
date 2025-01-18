@@ -1,3 +1,7 @@
+Major changes in 0.13 are:
+* meson: Do not fail if destdir isn't set
+* meson: Install user-dirs-update-gtk.desktop in the correct datadir
+
 Major changes in 0.12 are:
 * Add CI
 * Replace autotools with meson
