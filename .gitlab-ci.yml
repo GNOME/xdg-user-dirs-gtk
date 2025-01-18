@@ -44,7 +44,6 @@ build-fedora:
       git
       glib2-devel
       gtk3-devel
-      intltool
       meson
       xdg-user-dirs
   before_script:
