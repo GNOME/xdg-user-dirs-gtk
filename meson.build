@@ -1,6 +1,6 @@
 project(
   'xdg-user-dirs-gtk', 'c',
-        version : '0.14',
+        version : '0.15',
         license : 'GPL-2.0-or-later',
   meson_version : '>= 1.0.0'
 )
