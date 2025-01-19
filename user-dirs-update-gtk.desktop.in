@@ -1,5 +1,4 @@
 [Desktop Entry]
-Encoding=UTF-8
 Exec=xdg-user-dirs-gtk-update
 Name=User folders update
 Comment=Update common folders names to match current locale
