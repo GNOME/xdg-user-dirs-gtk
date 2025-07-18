@@ -5,6 +5,7 @@ project(
   meson_version : '>= 1.0.0'
 )
 
+bindir = join_paths (get_option ('prefix'), get_option ('bindir'))
 localedir = join_paths (get_option ('prefix'), get_option ('localedir'))
 sysconfdir = join_paths (get_option ('prefix'), get_option ('sysconfdir'))
 datadir = join_paths (get_option ('prefix'), get_option ('datadir'))
@@ -21,8 +22,25 @@ executable ('xdg-user-dirs-gtk-update',
                       '-DGLIBLOCALEDIR="@0@"'.format (localedir) ],
             install: true )
 
-i18n = import('i18n')
+# Integration with modern session startup
+systemd = dependency('systemd', required: false)
+systemd_user_unit_dir = systemd.get_variable(
+    'systemd_user_unit_dir',
+    pkgconfig_define: ['prefix', get_option('prefix')],
+    default_value: get_option('prefix') / 'lib' / 'systemd' / 'user'
+)
+configure_file(
+    input: 'user-dirs-update-gtk.service.in',
+    output: 'user-dirs-update-gtk.service',
+    configuration: {
+        'bindir': bindir,
+    },
+    install: true,
+    install_dir: systemd_user_unit_dir,
+)
 
+# Integration with legacy session startup
+i18n = import('i18n')
 i18n.merge_file (input: 'user-dirs-update-gtk.desktop.in',
                  output: 'user-dirs-update-gtk.desktop',
                  install: true,
