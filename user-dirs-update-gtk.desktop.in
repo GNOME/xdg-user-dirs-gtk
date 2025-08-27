@@ -9,3 +9,4 @@ NoDisplay=true
 Type=Application
 StartupNotify=false
 X-KDE-autostart-after=panel
+X-systemd-skip=true
