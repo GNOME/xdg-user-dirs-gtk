@@ -1,3 +1,6 @@
+Major changes in 0.16 are:
+* Same as 0.15, tagged the wrong commit
+
 Major changes in 0.15 are:
 * autostart: Add systemd service
 * Translation updates
