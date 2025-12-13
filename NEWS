@@ -1,3 +1,7 @@
+Major changes in 0.15 are:
+* autostart: Add systemd service
+* Translation updates
+
 Major changes in 0.14 are:
 *   build: Respect directory options in post install script
 *   desktop: Fix translatable string merging
@@ -52,9 +56,9 @@ Major changes in 0.4 are:
 Major changes in 0.3 are:
  * German translation
  * Fail configure if xdg-user-dirs-update isn't found
- 
+
 Major changes in 0.2 are:
  * Fixed issues in autostart desktop file
- 
+
 Major changes in 0.1 are:
  * Initial release
