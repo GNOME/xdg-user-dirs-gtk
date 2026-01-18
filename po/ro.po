@@ -2,70 +2,72 @@
 # Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
 # This file is distributed under the same license as the xdg-user-dirs-gtk package.
 # Adi Roiban <adi@roiban.ro>, 2009.
+# Antonio Marin <gnmer.6qxyg@slmail.me>, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xdg-user-dirs-gtk\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=xdg-"
-"user-dirs-gtk&component=general\n"
-"POT-Creation-Date: 2009-08-19 17:54+0000\n"
-"PO-Revision-Date: 2009-09-30 22:29+0300\n"
-"Last-Translator: Adi Roiban <adi@roiban.ro>\n"
-"Language-Team: Romanian <ro@li.org>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/xdg-user-dirs-gtk/"
+"issues\n"
+"POT-Creation-Date: 2025-12-13 21:34+0000\n"
+"PO-Revision-Date: 2026-01-18 11:56+0100\n"
+"Last-Translator: Antonio Marin <gnmer.6qxyg@slmail.me>\n"
+"Language-Team: Romanian <gnomero-list@lists.sourceforge.net>\n"
+"Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2009-09-29 12:32+0000\n"
-"X-Generator: Launchpad (build Unknown)\n"
+"X-Generator: Gtranslator 48.0\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2);\n"
 
-#: ../update.c:159
+#: update.c:184
 msgid "Update standard folders to current language?"
-msgstr "Actualizați dosarele standard la limba curentă?"
+msgstr "Se actualizează dosarele standard la limba actuală?"
 
-#: ../update.c:161
+#: update.c:186
 msgid ""
 "You have logged in in a new language. You can automatically update the names "
 "of some standard folders in your home folder to match this language. The "
 "update would change the following folders:"
 msgstr ""
-"V-ați autentificat alegând o nouă limbă. Puteți actualiza automat numele "
-"unor dosare standard din dosarul personal pentru a se potrivi cu această "
-"limbă. Actualizarea va modifica numele următoarelor dosare:"
+"Autentificarea a fost făcută într-o limbă nouă. Este posibilă actualizarea "
+"automată a numelor anumitor dosare din dosarul personal pentru a se potrivi "
+"cu limba nouă. Actualizarea va schimba numele următoarelor dosare:"
 
-#: ../update.c:164
+#: update.c:189
 msgid "_Keep Old Names"
 msgstr "_Păstrează vechile nume"
 
-#: ../update.c:165
+#: update.c:190
 msgid "_Update Names"
 msgstr "Act_ualizează numele"
 
-#: ../update.c:190
+#: update.c:216
 msgid "Current folder name"
-msgstr "Nume curent dosar"
+msgstr "Numele actual"
 
-#: ../update.c:195
+#: update.c:221
 msgid "New folder name"
-msgstr "Nume nou dosar"
+msgstr "Numele nou"
 
-#: ../update.c:205
+#: update.c:231
 msgid "Note that existing content will not be moved."
 msgstr "Conținutul existent nu va fi mutat."
 
-#: ../update.c:212
+#: update.c:238
 msgid "_Don't ask me this again"
-msgstr "Nu mai întreba _de altădată"
+msgstr "Nu mai întreba altă_dată"
 
-#: ../update.c:229
+#: update.c:255
 msgid "There was an error updating the folders"
 msgstr "A apărut o eroare la actualizarea dosarelor"
 
-#: ../user-dirs-update-gtk.desktop.in.h:1
-msgid "Update common folders names to match current locale"
-msgstr "Actualizați numele dosarelor uzuale pentru a se potrivi cu "
-"localizarea curentă"
-
-#: ../user-dirs-update-gtk.desktop.in.h:2
+#: user-dirs-update-gtk.desktop.in:3
 msgid "User folders update"
-msgstr "Actualizare dosare utilizator"
+msgstr "Actualizare dosare"
 
+#: user-dirs-update-gtk.desktop.in:4
+msgid "Update common folders names to match current locale"
+msgstr "Schimbă numele dosarelor pentru a se potrivi cu limba actuală"
