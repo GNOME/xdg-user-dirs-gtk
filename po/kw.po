@@ -1,0 +1,77 @@
+# Cornish translation for xdg-user-dirs-gtk.
+# Copyright (C) 2026 xdg-user-dirs-gtk's COPYRIGHT HOLDER
+# This file is distributed under the same license as the xdg-user-dirs-gtk package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Flynn Peck <cirilla@tuta.io>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xdg-user-dirs-gtk master\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/xdg-user-dirs-gtk/"
+"issues\n"
+"POT-Creation-Date: 2025-12-13 21:34+0000\n"
+"PO-Revision-Date: 2026-01-28 23:09+0000\n"
+"Last-Translator: Flynn Peck <cirilla@tuta.io>\n"
+"Language-Team: kw\n"
+"Language: kw\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-DL-VCS-Web: https://gitlab.gnome.org/GNOME/xdg-user-dirs-gtk/\n"
+"X-DL-Lang: kw\n"
+"X-DL-Module: xdg-user-dirs-gtk\n"
+"X-DL-Branch: master\n"
+"X-DL-Domain: po\n"
+"X-DL-State: Translating\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 49.0\n"
+
+#: update.c:184
+msgid "Update standard folders to current language?"
+msgstr "Nowedhi restrenvaow savonek dhe yeth a-lemmyn?"
+
+#: update.c:186
+msgid ""
+"You have logged in in a new language. You can automatically update the names "
+"of some standard folders in your home folder to match this language. The "
+"update would change the following folders:"
+msgstr ""
+"Ty re omgelmys y'n yeth nowydh. Ty a yll nowedhi yn awtomatek an henwyn a "
+"nebes restrenva savonek yn dha restrenva tre rag omdhesedha orth an yeth ma. "
+"An nowedhyans a wra chanjya an restrenva a sew:"
+
+#: update.c:189
+msgid "_Keep Old Names"
+msgstr "_Gwitha Henwyn Kyns"
+
+#: update.c:190
+msgid "_Update Names"
+msgstr "_Nowedhi Henwyn"
+
+#: update.c:216
+msgid "Current folder name"
+msgstr "Hanow restrenva a-lemmyn"
+
+#: update.c:221
+msgid "New folder name"
+msgstr "Hanow restrenva nowydh"
+
+#: update.c:231
+msgid "Note that existing content will not be moved."
+msgstr "Notya: dalgh owth eksistya seulabrys a wra na movys."
+
+#: update.c:238
+msgid "_Don't ask me this again"
+msgstr "_Na govyn vy hemma arta"
+
+#: update.c:255
+msgid "There was an error updating the folders"
+msgstr "Yma unn errur ow nowedhi an restrenvaow"
+
+#: user-dirs-update-gtk.desktop.in:3
+msgid "User folders update"
+msgstr "Nowdhyans restrenvaow usyer"
+
+#: user-dirs-update-gtk.desktop.in:4
+msgid "Update common folders names to match current locale"
+msgstr "Nowedhi henwyn restrenvaow kemmyn rag omdhesedha orth yeth a-lemmyn"
